@@ -114,9 +114,9 @@
 		6AB24DEC23EB550100530BA5 /* ListContacts */ = {
 			isa = PBXGroup;
 			children = (
+				6AB24DED23EB551000530BA5 /* Models */,
 				6AB24DF323EB555B00530BA5 /* Services */,
 				6AB24DF023EB552D00530BA5 /* ViewModels */,
-				6AB24DED23EB551000530BA5 /* Models */,
 				6AB24DF623EB557200530BA5 /* Views */,
 			);
 			path = ListContacts;

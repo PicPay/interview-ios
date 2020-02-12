@@ -1,9 +1,9 @@
 import UIKit
 
 class UserIdsLegacy {
-    static let legacyIds = ["a10", "a11", "a12"]
+    static let legacyIds = [10, 11, 12, 13]
     
-    static func isLegacy(id: String) -> Bool {
+    static func isLegacy(id: Int) -> Bool {
         return legacyIds.contains(id)
     }
 }
