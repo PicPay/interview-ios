@@ -1,6 +1,5 @@
 import Foundation
 
-/******************* MODEL ********************/
 class Contact: Decodable {
     var id: Int
     var name: String = ""
