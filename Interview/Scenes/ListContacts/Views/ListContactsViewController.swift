@@ -8,7 +8,6 @@ class UserIdsLegacy {
     }
 }
 
-/******************* VIEWCONTROLLER ********************/
 class ListContactsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)

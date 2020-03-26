@@ -1,6 +1,5 @@
 import Foundation
 
-/******************* SERVICE ********************/
 class ListContactService {
     func fetchContacts(completion: @escaping ([Contact]?, Error?) -> Void) {
         /// Usa URLSession para acessar a API e retorna
