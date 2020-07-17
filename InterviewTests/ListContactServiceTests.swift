@@ -13,11 +13,11 @@ class ListContactServiceTests: XCTestCase {
     
     var mockData: Data? {
         """
-        {
+        [{
           "id": 2,
           "name": "Beyonce",
           "photoURL": "https://api.adorable.io/avatars/285/a2.png"
-        }
+        }]
         """.data(using: .utf8)
     }
 
