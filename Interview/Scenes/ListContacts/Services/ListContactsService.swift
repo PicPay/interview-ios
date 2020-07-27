@@ -2,6 +2,17 @@ import Foundation
 
 private let apiURL = "https://run.mocky.io/v3/c4ba296a-58af-4877-99bc-8d8589ae2171"
 
+/*
+ Json Contract
+[
+  {
+    "id": 1,
+    "name": "Shakira",
+    "photoURL": "https://api.adorable.io/avatars/285/a1.png"
+  }
+]
+*/
+
 class ListContactService {
     func fetchContacts(completion: @escaping ([Contact]?, Error?) -> Void) {
         guard let api = URL(string: apiURL) else {
@@ -27,13 +38,3 @@ class ListContactService {
         task.resume()
     }
 }
-
-/*
-[
-  {
-    "id": 1,
-    "name": "Shakira",
-    "photoURL": "https://api.adorable.io/avatars/285/a1.png"
-  }
-]
-*/

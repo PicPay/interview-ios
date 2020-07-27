@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  Interview
-//
-//  Created by Fernando Sousa on 05/02/20.
-//  Copyright © 2020 PicPay. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain
