@@ -51,7 +51,7 @@ class ListContactsViewController: UIViewController, UITableViewDataSource, UITab
         viewModel = ListContactsViewModel()
         configureViews()
         
-        navigationController?.title = "Lista de contatos"
+        self.title = "Lista de contatos"
         
         loadData()
     }
