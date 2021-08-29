@@ -1,26 +1,40 @@
 import Foundation
 
-/******************* SERVICE ********************/
+private let apiURL = "https://run.mocky.io/v3/1d9c3bbe-eb63-4d09-980a-989ad740a9ac"
+
+/*
+ Json Contract
+[
+  {
+    "id": 1,
+    "name": "Shakira",
+    "photoURL": "https://api.adorable.io/avatars/285/a1.png"
+  }
+]
+*/
+
 class ListContactService {
     func fetchContacts(completion: @escaping ([Contact]?, Error?) -> Void) {
-        /// Usa URLSession para acessar a API e retorna
-        DispatchQueue.global().async {
+        guard let api = URL(string: apiURL) else {
+            return
+        }
+        
+        let session = URLSession.shared
+        let task = session.dataTask(with: api) { (data, response, error) in
+            guard let jsonData = data else {
+                return
+            }
+            
             do {
-                guard let jsonData = "[{\"id\":1,\"name\":\"Shakira\",\"photoURL\":\"https://api.adorable.io/avatars/285/a1.png\"},{\"id\":2,\"name\":\"Beyonce\",\"photoURL\":\"https://api.adorable.io/avatars/285/a2.png\"},{\"id\":3,\"name\":\"Tom Cruise\",\"photoURL\":\"https://api.adorable.io/avatars/285/a3.png\"},{\"id\":4,\"name\":\"Tiririca\",\"photoURL\":\"https://api.adorable.io/avatars/285/a4.png\"},{\"id\":5,\"name\":\"Steve Rogers\",\"photoURL\":\"https://api.adorable.io/avatars/285/a5.png\"},{\"id\":6,\"name\":\"Steve Jobs\",\"photoURL\":\"https://api.adorable.io/avatars/285/a6.png\"},{\"id\":7,\"name\":\"Scott Forstall\",\"photoURL\":\"https://api.adorable.io/avatars/285/a7.png\"},{\"id\":8,\"name\":\"Craig Federighi\",\"photoURL\":\"https://api.adorable.io/avatars/285/a8.png\"},{\"id\":9,\"name\":\"Steve Ballmer\",\"photoURL\":\"https://api.adorable.io/avatars/285/a9.png\"},{\"id\":10,\"name\":\"Lucas Romano\",\"photoURL\":\"https://api.adorable.io/avatars/285/a10.png\"},{\"id\":11,\"name\":\"Lucas Cypriano\",\"photoURL\":\"https://api.adorable.io/avatars/285/a11.png\"},{\"id\":12,\"name\":\"Fernando Nazario\",\"photoURL\":\"https://api.adorable.io/avatars/285/a12.png\"},{\"id\":13,\"name\":\"Judar Lima\",\"photoURL\":\"https://api.adorable.io/avatars/285/a13.png\"}]".data(using: .utf8, allowLossyConversion: true) else {
-                    completion(nil, nil)
-                    return
-                }
-                
                 let decoder = JSONDecoder()
                 let decoded = try decoder.decode([Contact].self, from: jsonData)
                 
-                DispatchQueue.main.async {
-                    completion(decoded, nil)
-                }
+                completion(decoded, nil)
             } catch let error {
-                debugPrint("[Service] -----> \(error)")
                 completion(nil, error)
             }
         }
+        
+        task.resume()
     }
 }

@@ -1,6 +1,5 @@
 import Foundation
 
-/******************* VIEWMODEL ********************/
 class ListContactsViewModel {
     private let service = ListContactService()
     

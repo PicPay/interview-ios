@@ -8,8 +8,14 @@ class UserIdsLegacy {
     }
 }
 
-/******************* VIEWCONTROLLER ********************/
 class ListContactsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    lazy var activity: UIActivityIndicatorView = {
+        let activity = UIActivityIndicatorView()
+        activity.hidesWhenStopped = true
+        activity.startAnimating()
+        return activity
+    }()
+    
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -17,6 +23,8 @@ class ListContactsViewController: UIViewController, UITableViewDataSource, UITab
         tableView.delegate = self
         tableView.rowHeight = 120
         tableView.register(ContactCell.self, forCellReuseIdentifier: String(describing: ContactCell.self))
+        tableView.backgroundView = activity
+        tableView.tableFooterView = UIView()
         return tableView
     }()
     
@@ -43,7 +51,7 @@ class ListContactsViewController: UIViewController, UITableViewDataSource, UITab
         viewModel = ListContactsViewModel()
         configureViews()
         
-        navigationController?.title = "Lista de contatos"
+        self.title = "Lista de contatos"
         
         loadData()
     }
@@ -115,6 +123,7 @@ class ListContactsViewController: UIViewController, UITableViewDataSource, UITab
                 
                 self.contacts = contacts ?? []
                 self.tableView.reloadData()
+                self.activity.stopAnimating()
             }
         }
     }
