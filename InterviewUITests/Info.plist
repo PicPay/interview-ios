@@ -18,5 +18,7 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>ApiKey</key>
+	<string>https://run.mocky.io/v3/1d9c3bbe-eb63-4d09-980a-989ad740a9ac</string>
 </dict>
 </plist>
