@@ -11,10 +11,10 @@ final class AppConfiguration {
 
     static let shared = AppConfiguration()
 
-    lazy var apiKey: String = {
-        guard let apiKey = Bundle.main.object(forInfoDictionaryKey: "ApiKey") as? String else {
-            fatalError("ApiKey must not be empty in plist")
+    lazy var ApiUrl: String = {
+        guard let apiUrl = Bundle.main.object(forInfoDictionaryKey: "ApiUrl") as? String else {
+            fatalError("ApiUrl must not be empty in plist")
         }
-        return apiKey
+        return apiUrl
     }()
 }
