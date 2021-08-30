@@ -34,4 +34,15 @@ class ListContactsUITests: XCTestCase {
             .withText(contactName)
             .withButton(title: "OK")
     }
+
+    //    Given I open the contact list screen
+    //    When I click on a legacy contact in the list
+    //    Then It should display an alert with text "Você tocou no contato sorteado"
+    func test_selectLegacyContactFromList() throws {
+        let contactName = "Judar Lima"
+        app.clickOnCellWithText(contactName)
+        app.shouldDisplayAlertWithTitle("Atenção")
+            .withText("Você tocou no contato sorteado")
+            .withButton(title: "OK")
+    }
 }
