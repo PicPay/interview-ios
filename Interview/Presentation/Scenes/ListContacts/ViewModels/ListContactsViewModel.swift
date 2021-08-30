@@ -1,26 +1,25 @@
 import Foundation
 
 class ListContactsViewModel {
-    private let service = ListContactService()
+    let fetchContactsUseCase: FetchContactsUseCase
     
     private var completion: (([Contact]?, Error?) -> Void)?
     
-    init() { }
+    init(fetchContactsUseCase: FetchContactsUseCase) {
+        self.fetchContactsUseCase = fetchContactsUseCase
+    }
     
     func loadContacts(_ completion: @escaping ([Contact]?, Error?) -> Void) {
         self.completion = completion
-        service.fetchContacts { contacts, err in
-            self.handle(contacts, err)
-        }
+        fetchContactsUseCase.fetchContacts(completion: handleFetchContacts)
     }
     
-    private func handle(_ contacts: [Contact]?, _ error: Error?) {
-        if let e = error {
-            completion?(nil, e)
-        }
-        
-        if let contacts = contacts {
+    private func handleFetchContacts(result: Result<[Contact], Error>) {
+        switch result {
+        case .success(let contacts):
             completion?(contacts, nil)
+        case .failure(let error):
+            completion?(nil, error)
         }
     }
 }
