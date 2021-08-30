@@ -1,19 +1,19 @@
 import Foundation
 
-class Contact: Decodable {
+class Contact {
     var id: Int
-    var name: String = ""
-    var photoURL = ""
-    
+    var name: String
+    var photoURL: String
+
     init(id: Int, name: String, photoURL: String) {
         self.id = id
         self.name = name
         self.photoURL = photoURL
     }
-    
-    enum CodingKeys: String, CodingKey {
-        case name = "name"
-        case photoURL = "photoURL"
-        case id = "id"
+
+    init() {
+        id = 0
+        name = ""
+        photoURL = ""
     }
 }
