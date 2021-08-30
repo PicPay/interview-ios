@@ -86,6 +86,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E09E56D26DD2A5B0088A0F9 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		1E09E56E26DD2A600088A0F9 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		1E09E56F26DD2A6A0088A0F9 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
 		1E59B81326DBC6B000622D59 /* InterviewUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +157,9 @@
 		6AB24DBE23EB546D00530BA5 /* Interview */ = {
 			isa = PBXGroup;
 			children = (
+				1E09E56D26DD2A5B0088A0F9 /* Data */,
+				1E09E56F26DD2A6A0088A0F9 /* Domain */,
+				1E09E56E26DD2A600088A0F9 /* Presentation */,
 				6AB24DF923EB55D400530BA5 /* Resources */,
 				6AB24DEB23EB54F500530BA5 /* Scenes */,
 				6AB24DBF23EB546D00530BA5 /* AppDelegate.swift */,
