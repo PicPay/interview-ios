@@ -97,6 +97,7 @@
 		1E09E56E26DD2A600088A0F9 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				6AB24DEB23EB54F500530BA5 /* Scenes */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -163,7 +164,6 @@
 				1E09E56F26DD2A6A0088A0F9 /* Domain */,
 				1E09E56E26DD2A600088A0F9 /* Presentation */,
 				6AB24DF923EB55D400530BA5 /* Resources */,
-				6AB24DEB23EB54F500530BA5 /* Scenes */,
 				6AB24DBF23EB546D00530BA5 /* AppDelegate.swift */,
 				6AB24DC123EB546D00530BA5 /* SceneDelegate.swift */,
 				6AB24DCD23EB546F00530BA5 /* Info.plist */,
