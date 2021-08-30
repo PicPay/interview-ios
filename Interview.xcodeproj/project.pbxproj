@@ -89,6 +89,7 @@
 		1E09E56D26DD2A5B0088A0F9 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				6AB24DF323EB555B00530BA5 /* Services */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -190,7 +191,6 @@
 		6AB24DEC23EB550100530BA5 /* ListContacts */ = {
 			isa = PBXGroup;
 			children = (
-				6AB24DF323EB555B00530BA5 /* Services */,
 				6AB24DF023EB552D00530BA5 /* ViewModels */,
 				6AB24DF623EB557200530BA5 /* Views */,
 			);
