@@ -15,6 +15,8 @@
 		1E09E5A926DD80210088A0F9 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E5A726DD80210088A0F9 /* HttpClient.swift */; };
 		1E09E5AD26DD81D40088A0F9 /* ContactDataSourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E5AC26DD81D40088A0F9 /* ContactDataSourceType.swift */; };
 		1E09E5B226DD82E70088A0F9 /* FetchContactsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E5B126DD82E70088A0F9 /* FetchContactsRepository.swift */; };
+		1E09E5C226DDAF980088A0F9 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E5C126DDAF980088A0F9 /* ImageCache.swift */; };
+		1E09E5D026DDEA960088A0F9 /* ImageURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E5CF26DDEA960088A0F9 /* ImageURLProtocol.swift */; };
 		1E09E5D226DE49650088A0F9 /* TimePerformanceMetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E5D126DE49650088A0F9 /* TimePerformanceMetric.swift */; };
 		1E09E5D526DE4C210088A0F9 /* TimeMetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E5D426DE4C210088A0F9 /* TimeMetric.swift */; };
 		1E09E5D726DE506D0088A0F9 /* XCTPerformance+Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E5D626DE506D0088A0F9 /* XCTPerformance+Metrics.swift */; };
@@ -59,6 +61,8 @@
 		1E09E5A726DD80210088A0F9 /* HttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		1E09E5AC26DD81D40088A0F9 /* ContactDataSourceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDataSourceType.swift; sourceTree = "<group>"; };
 		1E09E5B126DD82E70088A0F9 /* FetchContactsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchContactsRepository.swift; sourceTree = "<group>"; };
+		1E09E5C126DDAF980088A0F9 /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		1E09E5CF26DDEA960088A0F9 /* ImageURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageURLProtocol.swift; sourceTree = "<group>"; };
 		1E09E5D126DE49650088A0F9 /* TimePerformanceMetric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePerformanceMetric.swift; sourceTree = "<group>"; };
 		1E09E5D426DE4C210088A0F9 /* TimeMetric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeMetric.swift; sourceTree = "<group>"; };
 		1E09E5D626DE506D0088A0F9 /* XCTPerformance+Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTPerformance+Metrics.swift"; sourceTree = "<group>"; };
@@ -146,9 +150,10 @@
 			isa = PBXGroup;
 			children = (
 				1E09E58326DD4BBF0088A0F9 /* API */,
-				6AB24DF323EB555B00530BA5 /* DataSource */,
-				1E09E58B26DD4CCC0088A0F9 /* DTO */,
 				1E09E59B26DD68250088A0F9 /* Mappers */,
+				1E09E58B26DD4CCC0088A0F9 /* DTO */,
+				6AB24DF323EB555B00530BA5 /* DataSource */,
+				1E09E5BB26DDAA730088A0F9 /* Image */,
 				1E09E58026DD4B850088A0F9 /* Network */,
 			);
 			path = NetworkPlatform;
@@ -212,7 +217,30 @@
 			path = Repositories;
 			sourceTree = "<group>";
 		};
-		1E59B81326DBC6B000622D59 /* InterviewUITests */ = {
+		1E09E5B926DDAA290088A0F9 /* LocalCachePlatform */ = {
+			isa = PBXGroup;
+			children = (
+				1E09E5BA26DDAA630088A0F9 /* Image */,
+			);
+			path = LocalCachePlatform;
+			sourceTree = "<group>";
+		};
+		1E09E5BA26DDAA630088A0F9 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				1E09E5C126DDAF980088A0F9 /* ImageCache.swift */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		1E09E5BB26DDAA730088A0F9 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				1E09E5CF26DDEA960088A0F9 /* ImageURLProtocol.swift */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
 		1E09E5D326DE4BE30088A0F9 /* Metrics */ = {
 			isa = PBXGroup;
 			children = (
@@ -506,6 +534,7 @@
 			files = (
 				1E09E59A26DD68160088A0F9 /* URLRequest+APIs.swift in Sources */,
 				1E09E5AD26DD81D40088A0F9 /* ContactDataSourceType.swift in Sources */,
+				1E09E5C226DDAF980088A0F9 /* ImageCache.swift in Sources */,
 				1E09E57926DD2EEC0088A0F9 /* FetchContactsUseCase.swift in Sources */,
 				6AB24DEF23EB552100530BA5 /* Contact.swift in Sources */,
 				6AB24DEA23EB54E800530BA5 /* ListContactsViewController.swift in Sources */,
@@ -514,6 +543,7 @@
 				6AB24DC023EB546D00530BA5 /* AppDelegate.swift in Sources */,
 				1E09E5B226DD82E70088A0F9 /* FetchContactsRepository.swift in Sources */,
 				1E09E59526DD55280088A0F9 /* AppConfiguration.swift in Sources */,
+				1E09E5D026DDEA960088A0F9 /* ImageURLProtocol.swift in Sources */,
 				1E09E5A926DD80210088A0F9 /* HttpClient.swift in Sources */,
 				6AB24DF223EB554300530BA5 /* ListContactsViewModel.swift in Sources */,
 				6AB24DF823EB558D00530BA5 /* ContactCell.swift in Sources */,
