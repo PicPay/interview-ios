@@ -13,13 +13,14 @@
 		1E09E59A26DD68160088A0F9 /* URLRequest+APIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E59926DD68160088A0F9 /* URLRequest+APIs.swift */; };
 		1E09E59F26DD68250088A0F9 /* Contact+Mappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E59D26DD68250088A0F9 /* Contact+Mappers.swift */; };
 		1E09E5A926DD80210088A0F9 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E5A726DD80210088A0F9 /* HttpClient.swift */; };
-		1E09E5AD26DD81D40088A0F9 /* ContactDataSourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E5AC26DD81D40088A0F9 /* ContactDataSourceType.swift */; };
+		1E09E5AD26DD81D40088A0F9 /* ContactDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E5AC26DD81D40088A0F9 /* ContactDataSource.swift */; };
 		1E09E5B226DD82E70088A0F9 /* FetchContactsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E5B126DD82E70088A0F9 /* FetchContactsRepository.swift */; };
 		1E09E5C226DDAF980088A0F9 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E5C126DDAF980088A0F9 /* ImageCache.swift */; };
 		1E09E5D026DDEA960088A0F9 /* ImageURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E5CF26DDEA960088A0F9 /* ImageURLProtocol.swift */; };
 		1E09E5D226DE49650088A0F9 /* TimePerformanceMetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E5D126DE49650088A0F9 /* TimePerformanceMetric.swift */; };
 		1E09E5D526DE4C210088A0F9 /* TimeMetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E5D426DE4C210088A0F9 /* TimeMetric.swift */; };
 		1E09E5D726DE506D0088A0F9 /* XCTPerformance+Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E5D626DE506D0088A0F9 /* XCTPerformance+Metrics.swift */; };
+		1E09E5DD26DE65500088A0F9 /* NetworkContactDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E5DC26DE65500088A0F9 /* NetworkContactDataSource.swift */; };
 		1E59B81E26DBC71700622D59 /* ListContactsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E59B81D26DBC71700622D59 /* ListContactsUITests.swift */; };
 		1E8C8E7326DBCD420034CA83 /* XCUIElement+Asserts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8C8E7226DBCD420034CA83 /* XCUIElement+Asserts.swift */; };
 		1E8C8E7526DBD1380034CA83 /* XCUIApplication+Asserts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8C8E7426DBD1380034CA83 /* XCUIApplication+Asserts.swift */; };
@@ -30,7 +31,6 @@
 		6AB24DEA23EB54E800530BA5 /* ListContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB24DE923EB54E800530BA5 /* ListContactsViewController.swift */; };
 		6AB24DEF23EB552100530BA5 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB24DEE23EB552100530BA5 /* Contact.swift */; };
 		6AB24DF223EB554300530BA5 /* ListContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB24DF123EB554300530BA5 /* ListContactsViewModel.swift */; };
-		6AB24DF523EB556700530BA5 /* NetworkContactDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB24DF423EB556700530BA5 /* NetworkContactDataSource.swift */; };
 		6AB24DF823EB558D00530BA5 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB24DF723EB558D00530BA5 /* ContactCell.swift */; };
 		6ABE2F9024CEF691009D7593 /* ListContactServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABE2F8F24CEF691009D7593 /* ListContactServiceTests.swift */; };
 /* End PBXBuildFile section */
@@ -59,13 +59,14 @@
 		1E09E59926DD68160088A0F9 /* URLRequest+APIs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLRequest+APIs.swift"; sourceTree = "<group>"; };
 		1E09E59D26DD68250088A0F9 /* Contact+Mappers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Contact+Mappers.swift"; sourceTree = "<group>"; };
 		1E09E5A726DD80210088A0F9 /* HttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
-		1E09E5AC26DD81D40088A0F9 /* ContactDataSourceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDataSourceType.swift; sourceTree = "<group>"; };
+		1E09E5AC26DD81D40088A0F9 /* ContactDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDataSource.swift; sourceTree = "<group>"; };
 		1E09E5B126DD82E70088A0F9 /* FetchContactsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchContactsRepository.swift; sourceTree = "<group>"; };
 		1E09E5C126DDAF980088A0F9 /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		1E09E5CF26DDEA960088A0F9 /* ImageURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageURLProtocol.swift; sourceTree = "<group>"; };
 		1E09E5D126DE49650088A0F9 /* TimePerformanceMetric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePerformanceMetric.swift; sourceTree = "<group>"; };
 		1E09E5D426DE4C210088A0F9 /* TimeMetric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeMetric.swift; sourceTree = "<group>"; };
 		1E09E5D626DE506D0088A0F9 /* XCTPerformance+Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTPerformance+Metrics.swift"; sourceTree = "<group>"; };
+		1E09E5DC26DE65500088A0F9 /* NetworkContactDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkContactDataSource.swift; sourceTree = "<group>"; };
 		1E59B81226DBC6B000622D59 /* InterviewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InterviewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E59B81626DBC6B000622D59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E59B81D26DBC71700622D59 /* ListContactsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListContactsUITests.swift; sourceTree = "<group>"; };
@@ -82,7 +83,6 @@
 		6AB24DE923EB54E800530BA5 /* ListContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListContactsViewController.swift; sourceTree = "<group>"; };
 		6AB24DEE23EB552100530BA5 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		6AB24DF123EB554300530BA5 /* ListContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListContactsViewModel.swift; sourceTree = "<group>"; };
-		6AB24DF423EB556700530BA5 /* NetworkContactDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkContactDataSource.swift; sourceTree = "<group>"; };
 		6AB24DF723EB558D00530BA5 /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
 		6ABE2F8F24CEF691009D7593 /* ListContactServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListContactServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -204,7 +204,7 @@
 		1E09E5AB26DD819E0088A0F9 /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
-				1E09E5AC26DD81D40088A0F9 /* ContactDataSourceType.swift */,
+				1E09E5AC26DD81D40088A0F9 /* ContactDataSource.swift */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
@@ -311,10 +311,11 @@
 			isa = PBXGroup;
 			children = (
 				1E09E59626DD55400088A0F9 /* Application */,
+				1E09E5B926DDAA290088A0F9 /* LocalCachePlatform */,
 				1E09E56D26DD2A5B0088A0F9 /* Data */,
 				1E09E56F26DD2A6A0088A0F9 /* Domain */,
-				1E09E56E26DD2A600088A0F9 /* Presentation */,
 				1E09E57F26DD4B760088A0F9 /* NetworkPlatform */,
+				1E09E56E26DD2A600088A0F9 /* Presentation */,
 				6AB24DF923EB55D400530BA5 /* Resources */,
 				6AB24DCD23EB546F00530BA5 /* Info.plist */,
 			);
@@ -366,7 +367,7 @@
 		6AB24DF323EB555B00530BA5 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
-				6AB24DF423EB556700530BA5 /* NetworkContactDataSource.swift */,
+				1E09E5DC26DE65500088A0F9 /* NetworkContactDataSource.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -533,13 +534,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E09E59A26DD68160088A0F9 /* URLRequest+APIs.swift in Sources */,
-				1E09E5AD26DD81D40088A0F9 /* ContactDataSourceType.swift in Sources */,
+				1E09E5AD26DD81D40088A0F9 /* ContactDataSource.swift in Sources */,
 				1E09E5C226DDAF980088A0F9 /* ImageCache.swift in Sources */,
+				1E09E5DD26DE65500088A0F9 /* NetworkContactDataSource.swift in Sources */,
 				1E09E57926DD2EEC0088A0F9 /* FetchContactsUseCase.swift in Sources */,
 				6AB24DEF23EB552100530BA5 /* Contact.swift in Sources */,
 				6AB24DEA23EB54E800530BA5 /* ListContactsViewController.swift in Sources */,
 				1E09E58D26DD4D5F0088A0F9 /* ContactResponseDTO.swift in Sources */,
-				6AB24DF523EB556700530BA5 /* NetworkContactDataSource.swift in Sources */,
 				6AB24DC023EB546D00530BA5 /* AppDelegate.swift in Sources */,
 				1E09E5B226DD82E70088A0F9 /* FetchContactsRepository.swift in Sources */,
 				1E09E59526DD55280088A0F9 /* AppConfiguration.swift in Sources */,
