@@ -21,6 +21,9 @@
 		1E09E5D526DE4C210088A0F9 /* TimeMetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E5D426DE4C210088A0F9 /* TimeMetric.swift */; };
 		1E09E5D726DE506D0088A0F9 /* XCTPerformance+Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E5D626DE506D0088A0F9 /* XCTPerformance+Metrics.swift */; };
 		1E09E5DD26DE65500088A0F9 /* NetworkContactDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E5DC26DE65500088A0F9 /* NetworkContactDataSource.swift */; };
+		1E09E5E126DE6BF90088A0F9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E5E026DE6BF90088A0F9 /* User.swift */; };
+		1E09E5E326DE6C430088A0F9 /* CheckLegacyUsersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E5E226DE6C430088A0F9 /* CheckLegacyUsersUseCase.swift */; };
+		1E09E5E526DE72300088A0F9 /* ContactCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E5E426DE72300088A0F9 /* ContactCellViewModel.swift */; };
 		1E59B81E26DBC71700622D59 /* ListContactsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E59B81D26DBC71700622D59 /* ListContactsUITests.swift */; };
 		1E8C8E7326DBCD420034CA83 /* XCUIElement+Asserts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8C8E7226DBCD420034CA83 /* XCUIElement+Asserts.swift */; };
 		1E8C8E7526DBD1380034CA83 /* XCUIApplication+Asserts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8C8E7426DBD1380034CA83 /* XCUIApplication+Asserts.swift */; };
@@ -67,6 +70,9 @@
 		1E09E5D426DE4C210088A0F9 /* TimeMetric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeMetric.swift; sourceTree = "<group>"; };
 		1E09E5D626DE506D0088A0F9 /* XCTPerformance+Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTPerformance+Metrics.swift"; sourceTree = "<group>"; };
 		1E09E5DC26DE65500088A0F9 /* NetworkContactDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkContactDataSource.swift; sourceTree = "<group>"; };
+		1E09E5E026DE6BF90088A0F9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1E09E5E226DE6C430088A0F9 /* CheckLegacyUsersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckLegacyUsersUseCase.swift; sourceTree = "<group>"; };
+		1E09E5E426DE72300088A0F9 /* ContactCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCellViewModel.swift; sourceTree = "<group>"; };
 		1E59B81226DBC6B000622D59 /* InterviewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InterviewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E59B81626DBC6B000622D59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E59B81D26DBC71700622D59 /* ListContactsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListContactsUITests.swift; sourceTree = "<group>"; };
@@ -142,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				1E09E57826DD2EEC0088A0F9 /* FetchContactsUseCase.swift */,
+				1E09E5E226DE6C430088A0F9 /* CheckLegacyUsersUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -352,6 +359,7 @@
 			isa = PBXGroup;
 			children = (
 				6AB24DEE23EB552100530BA5 /* Contact.swift */,
+				1E09E5E026DE6BF90088A0F9 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -360,6 +368,7 @@
 			isa = PBXGroup;
 			children = (
 				6AB24DF123EB554300530BA5 /* ListContactsViewModel.swift */,
+				1E09E5E426DE72300088A0F9 /* ContactCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -542,11 +551,14 @@
 				6AB24DEA23EB54E800530BA5 /* ListContactsViewController.swift in Sources */,
 				1E09E58D26DD4D5F0088A0F9 /* ContactResponseDTO.swift in Sources */,
 				6AB24DC023EB546D00530BA5 /* AppDelegate.swift in Sources */,
+				1E09E5E526DE72300088A0F9 /* ContactCellViewModel.swift in Sources */,
 				1E09E5B226DD82E70088A0F9 /* FetchContactsRepository.swift in Sources */,
+				1E09E5E326DE6C430088A0F9 /* CheckLegacyUsersUseCase.swift in Sources */,
 				1E09E59526DD55280088A0F9 /* AppConfiguration.swift in Sources */,
 				1E09E5D026DDEA960088A0F9 /* ImageURLProtocol.swift in Sources */,
 				1E09E5A926DD80210088A0F9 /* HttpClient.swift in Sources */,
 				6AB24DF223EB554300530BA5 /* ListContactsViewModel.swift in Sources */,
+				1E09E5E126DE6BF90088A0F9 /* User.swift in Sources */,
 				6AB24DF823EB558D00530BA5 /* ContactCell.swift in Sources */,
 				1E09E59F26DD68250088A0F9 /* Contact+Mappers.swift in Sources */,
 				6AB24DC223EB546D00530BA5 /* SceneDelegate.swift in Sources */,
