@@ -31,6 +31,7 @@ extension Contact {
         contact.id = responseDTO.id
         contact.name = responseDTO.name
         contact.photoURL = responseDTO.photoURL
+        contact.photoURL.append("?k=\(contact.id)")
 
         return contact
     }

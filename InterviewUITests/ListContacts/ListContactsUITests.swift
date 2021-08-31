@@ -45,4 +45,21 @@ class ListContactsUITests: XCTestCase {
             .withText("Você tocou no contato sorteado")
             .withButton(title: "OK")
     }
+
+    //    Given I open the contact list screen
+    //    When I scroll up the contact list
+    //    Then It should take no more than 300 milli seconds
+    func test_scrollContactList() throws {
+        let firstCell = app.shouldDisplayCellWithText("Shakira")
+
+        let timePerformanceMetric = TimePerformanceMetric()
+        measure(metrics: [timePerformanceMetric]) {
+            if firstCell.isHittable {
+                firstCell.swipeUp(velocity: .fast)
+            }
+        }
+        let average = timePerformanceMetric.average(unit: .milli).integerValue()
+        let expected = TimeMetric.init(value: 300, unit: .milli).integerValue()
+        XCTAssert(average < expected, "scrolling up the contact list should take no more than 300 ms. Current is: \(average) ms")
+    }
 }
