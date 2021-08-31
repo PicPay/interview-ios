@@ -3,29 +3,26 @@ import UIKit
 class ListContactsViewController: UIViewController {
 
     var viewModel: ListContactsViewModel!
-
+    
     lazy var activity: UIActivityIndicatorView = {
         let activity = UIActivityIndicatorView()
         activity.hidesWhenStopped = true
-//        activity.startAnimating() // move to a separated method
         return activity
     }()
 
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.rowHeight = 120 // magic number , crete a constant and put it on Constants class
+        tableView.rowHeight = 120
         tableView.register(ContactCell.self, forCellReuseIdentifier: String(describing: ContactCell.self))
         tableView.backgroundView = activity
         tableView.tableFooterView = UIView()
-
-        tableView.allowsMultipleSelection = false // multi selection is not supported
+        tableView.allowsMultipleSelection = false
         return tableView
     }()
 
     override func loadView() {
         let view = UIView()
-//        view.backgroundColor = .white // move it to the styling method
         self.view = view
     }
 
@@ -38,8 +35,7 @@ class ListContactsViewController: UIViewController {
     }
 
     func configureViews() {
-//        view.backgroundColor = .white // this is not be showing, so it can be removed
-        view.backgroundColor = .red // it will override the previous color
+        view.backgroundColor = .red
         view.addSubview(tableView)
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
