@@ -1,13 +1,5 @@
 import UIKit
 
-class UserIdsLegacy {
-    static let legacyIds = [10, 11, 12, 13]
-    
-    static func isLegacy(id: Int) -> Bool {
-        return legacyIds.contains(id)
-    }
-}
-
 class ListContactsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     lazy var activity: UIActivityIndicatorView = {
         let activity = UIActivityIndicatorView()
@@ -68,7 +60,7 @@ class ListContactsViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     func isLegacy(contact: Contact) -> Bool {
-        return UserIdsLegacy.isLegacy(id: contact.id)
+        return viewModel.isLegacy(id: contact.id)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
