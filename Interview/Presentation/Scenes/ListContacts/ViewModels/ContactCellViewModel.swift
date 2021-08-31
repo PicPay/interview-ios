@@ -25,12 +25,20 @@ final class ContactCellViewModel: ContactViewModelInput {
     var output: ContactViewModelOutput!
     private var contact: Contact!
 
-    init(contact: Contact) {
+    private var checkLegacyUsersUseCase: CheckLegacyUsersUseCaseType
+
+    init(contact: Contact,
+         checkLegacyUsersUseCase: CheckLegacyUsersUseCaseType = CheckLegacyUsersUseCase()) {
         self.contact = contact
+        self.checkLegacyUsersUseCase = checkLegacyUsersUseCase
     }
 
     lazy var name: String = {
         contact.name
+    }()
+
+    lazy var isLegacy: Bool = {
+        checkLegacyUsersUseCase.isLegacy(userId: contact.id)
     }()
 
     func loadImage() {
