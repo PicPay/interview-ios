@@ -25,9 +25,16 @@ extension XCUIApplication {
 
     @discardableResult
     func clickOnCellWithText(_ text: String) -> XCUIElement {
-        let uiElement = tables.cells.staticTexts[text]
-        uiElement.shouldDisplay("cell with text '\(text)'")
+        let uiElement = shouldDisplayCellWithText(text)
         uiElement.tap()
         return uiElement
     }
+
+    @discardableResult
+    func shouldDisplayCellWithText(_ text: String) -> XCUIElement {
+        let uiElement = tables.cells.staticTexts[text]
+        uiElement.shouldDisplay("cell with text '\(text)'")
+        return uiElement
+    }
+
 }

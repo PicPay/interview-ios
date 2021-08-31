@@ -15,6 +15,9 @@
 		1E09E5A926DD80210088A0F9 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E5A726DD80210088A0F9 /* HttpClient.swift */; };
 		1E09E5AD26DD81D40088A0F9 /* ContactDataSourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E5AC26DD81D40088A0F9 /* ContactDataSourceType.swift */; };
 		1E09E5B226DD82E70088A0F9 /* FetchContactsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E5B126DD82E70088A0F9 /* FetchContactsRepository.swift */; };
+		1E09E5D226DE49650088A0F9 /* TimePerformanceMetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E5D126DE49650088A0F9 /* TimePerformanceMetric.swift */; };
+		1E09E5D526DE4C210088A0F9 /* TimeMetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E5D426DE4C210088A0F9 /* TimeMetric.swift */; };
+		1E09E5D726DE506D0088A0F9 /* XCTPerformance+Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E5D626DE506D0088A0F9 /* XCTPerformance+Metrics.swift */; };
 		1E59B81E26DBC71700622D59 /* ListContactsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E59B81D26DBC71700622D59 /* ListContactsUITests.swift */; };
 		1E8C8E7326DBCD420034CA83 /* XCUIElement+Asserts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8C8E7226DBCD420034CA83 /* XCUIElement+Asserts.swift */; };
 		1E8C8E7526DBD1380034CA83 /* XCUIApplication+Asserts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8C8E7426DBD1380034CA83 /* XCUIApplication+Asserts.swift */; };
@@ -56,6 +59,9 @@
 		1E09E5A726DD80210088A0F9 /* HttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		1E09E5AC26DD81D40088A0F9 /* ContactDataSourceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDataSourceType.swift; sourceTree = "<group>"; };
 		1E09E5B126DD82E70088A0F9 /* FetchContactsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchContactsRepository.swift; sourceTree = "<group>"; };
+		1E09E5D126DE49650088A0F9 /* TimePerformanceMetric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePerformanceMetric.swift; sourceTree = "<group>"; };
+		1E09E5D426DE4C210088A0F9 /* TimeMetric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeMetric.swift; sourceTree = "<group>"; };
+		1E09E5D626DE506D0088A0F9 /* XCTPerformance+Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTPerformance+Metrics.swift"; sourceTree = "<group>"; };
 		1E59B81226DBC6B000622D59 /* InterviewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InterviewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E59B81626DBC6B000622D59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E59B81D26DBC71700622D59 /* ListContactsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListContactsUITests.swift; sourceTree = "<group>"; };
@@ -207,9 +213,28 @@
 			sourceTree = "<group>";
 		};
 		1E59B81326DBC6B000622D59 /* InterviewUITests */ = {
+		1E09E5D326DE4BE30088A0F9 /* Metrics */ = {
+			isa = PBXGroup;
+			children = (
+				1E09E5D426DE4C210088A0F9 /* TimeMetric.swift */,
+				1E09E5D126DE49650088A0F9 /* TimePerformanceMetric.swift */,
+			);
+			path = Metrics;
+			sourceTree = "<group>";
+		};
+		1E09E5DB26DE5C610088A0F9 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
 				1E8C8E7126DBCD0B0034CA83 /* Extensions */,
+				1E09E5D326DE4BE30088A0F9 /* Metrics */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		1E59B81326DBC6B000622D59 /* InterviewUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1E09E5DB26DE5C610088A0F9 /* Commons */,
 				1E59B81C26DBC6BB00622D59 /* ListContacts */,
 				1E59B81626DBC6B000622D59 /* Info.plist */,
 			);
@@ -229,6 +254,7 @@
 			children = (
 				1E8C8E7226DBCD420034CA83 /* XCUIElement+Asserts.swift */,
 				1E8C8E7426DBD1380034CA83 /* XCUIApplication+Asserts.swift */,
+				1E09E5D626DE506D0088A0F9 /* XCTPerformance+Metrics.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -465,9 +491,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E09E5D526DE4C210088A0F9 /* TimeMetric.swift in Sources */,
 				1E8C8E7526DBD1380034CA83 /* XCUIApplication+Asserts.swift in Sources */,
 				1E59B81E26DBC71700622D59 /* ListContactsUITests.swift in Sources */,
+				1E09E5D726DE506D0088A0F9 /* XCTPerformance+Metrics.swift in Sources */,
 				1E8C8E7326DBCD420034CA83 /* XCUIElement+Asserts.swift in Sources */,
+				1E09E5D226DE49650088A0F9 /* TimePerformanceMetric.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
