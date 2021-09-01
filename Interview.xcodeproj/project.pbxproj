@@ -30,6 +30,9 @@
 		1E03DB6826DF5BA5002393F4 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E59426DD55280088A0F9 /* AppConfiguration.swift */; };
 		1E03DB8A26DF7312002393F4 /* ImageURLProtocol+IntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E03DB8926DF7312002393F4 /* ImageURLProtocol+IntegrationTests.swift */; };
 		1E03DBC126DF797B002393F4 /* FetchContactsUseCaseOutput+Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E03DBBD26DF797B002393F4 /* FetchContactsUseCaseOutput+Mocks.swift */; };
+		1E03DBC726DF7D21002393F4 /* Contact+Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E03DBC626DF7D21002393F4 /* Contact+Mocks.swift */; };
+		1E03DBD126DF7D30002393F4 /* ContactTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E03DBCB26DF7D30002393F4 /* ContactTests.swift */; };
+		1E03DBD626DF7DBA002393F4 /* Contact+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E03DBD526DF7DBA002393F4 /* Contact+Equatable.swift */; };
 		1E09E57926DD2EEC0088A0F9 /* FetchContactsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E57826DD2EEC0088A0F9 /* FetchContactsUseCase.swift */; };
 		1E09E58D26DD4D5F0088A0F9 /* ContactResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E58C26DD4D5F0088A0F9 /* ContactResponseDTO.swift */; };
 		1E09E59526DD55280088A0F9 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E59426DD55280088A0F9 /* AppConfiguration.swift */; };
@@ -82,6 +85,9 @@
 		1E03DB5326DF58EA002393F4 /* FetchContactsUseCaseIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchContactsUseCaseIntegrationTests.swift; sourceTree = "<group>"; };
 		1E03DB8926DF7312002393F4 /* ImageURLProtocol+IntegrationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ImageURLProtocol+IntegrationTests.swift"; sourceTree = "<group>"; };
 		1E03DBBD26DF797B002393F4 /* FetchContactsUseCaseOutput+Mocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FetchContactsUseCaseOutput+Mocks.swift"; sourceTree = "<group>"; };
+		1E03DBC626DF7D21002393F4 /* Contact+Mocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Contact+Mocks.swift"; sourceTree = "<group>"; };
+		1E03DBCB26DF7D30002393F4 /* ContactTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTests.swift; sourceTree = "<group>"; };
+		1E03DBD526DF7DBA002393F4 /* Contact+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+Equatable.swift"; sourceTree = "<group>"; };
 		1E09E57826DD2EEC0088A0F9 /* FetchContactsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchContactsUseCase.swift; sourceTree = "<group>"; };
 		1E09E58C26DD4D5F0088A0F9 /* ContactResponseDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactResponseDTO.swift; sourceTree = "<group>"; };
 		1E09E59426DD55280088A0F9 /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
@@ -203,6 +209,7 @@
 		1E03DBB926DF797B002393F4 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				1E03DBC526DF7D21002393F4 /* Models */,
 				1E03DBBC26DF797B002393F4 /* UseCases */,
 			);
 			path = Domain;
@@ -214,6 +221,47 @@
 				1E03DBBD26DF797B002393F4 /* FetchContactsUseCaseOutput+Mocks.swift */,
 			);
 			path = UseCases;
+			sourceTree = "<group>";
+		};
+		1E03DBC526DF7D21002393F4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1E03DBC626DF7D21002393F4 /* Contact+Mocks.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1E03DBC826DF7D30002393F4 /* Units */ = {
+			isa = PBXGroup;
+			children = (
+				1E03DBD426DF7D9F002393F4 /* Extensions */,
+				1E03DBC926DF7D30002393F4 /* Domain */,
+			);
+			path = Units;
+			sourceTree = "<group>";
+		};
+		1E03DBC926DF7D30002393F4 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				1E03DBCA26DF7D30002393F4 /* Models */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		1E03DBCA26DF7D30002393F4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1E03DBCB26DF7D30002393F4 /* ContactTests.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1E03DBD426DF7D9F002393F4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1E03DBD526DF7DBA002393F4 /* Contact+Equatable.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		1E09E56D26DD2A5B0088A0F9 /* Data */ = {
@@ -430,8 +478,9 @@
 		6AB24DD523EB546F00530BA5 /* InterviewTests */ = {
 			isa = PBXGroup;
 			children = (
-				1E03DBB526DF797B002393F4 /* Mocks */,
 				1E03DB4F26DF5846002393F4 /* Integrations */,
+				1E03DBB526DF797B002393F4 /* Mocks */,
+				1E03DBC826DF7D30002393F4 /* Units */,
 				6AB24DD823EB546F00530BA5 /* Info.plist */,
 			);
 			path = InterviewTests;
@@ -681,6 +730,7 @@
 				1E03DB5426DF58EA002393F4 /* FetchContactsUseCaseIntegrationTests.swift in Sources */,
 				1E03DB5C26DF5B0A002393F4 /* CheckLegacyUsersUseCase.swift in Sources */,
 				1E03DB5F26DF5B16002393F4 /* FetchContactsRepository.swift in Sources */,
+				1E03DBC726DF7D21002393F4 /* Contact+Mocks.swift in Sources */,
 				1E03DB8A26DF7312002393F4 /* ImageURLProtocol+IntegrationTests.swift in Sources */,
 				1E03DB6326DF5B59002393F4 /* ImageURLProtocol.swift in Sources */,
 				1E03DB6826DF5BA5002393F4 /* AppConfiguration.swift in Sources */,
@@ -689,9 +739,11 @@
 				1E03DB5726DF5AEA002393F4 /* ListContactsViewController.swift in Sources */,
 				1E03DB6726DF5B94002393F4 /* URLRequest+APIs.swift in Sources */,
 				1E03DBC126DF797B002393F4 /* FetchContactsUseCaseOutput+Mocks.swift in Sources */,
+				1E03DBD126DF7D30002393F4 /* ContactTests.swift in Sources */,
 				1E03DB5526DF59AA002393F4 /* ListContactsViewAssembler.swift in Sources */,
 				1E03DB5B26DF5B0A002393F4 /* FetchContactsUseCase.swift in Sources */,
 				1E03DB5E26DF5B10002393F4 /* User.swift in Sources */,
+				1E03DBD626DF7DBA002393F4 /* Contact+Equatable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
