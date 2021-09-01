@@ -4,7 +4,7 @@ struct NetworkContactDataSource: ContactDataSourceType {
 
     let httpClient: HTTPClientType
 
-    init(httpClient: HTTPClientType = HTTPClient()) {
+    init(httpClient: HTTPClientType) {
         self.httpClient = httpClient
     }
 
