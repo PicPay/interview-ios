@@ -19,7 +19,7 @@ protocol FetchContactsUseCaseOutput {
 class FetchContactsUseCase: FetchContactsUseCaseInput {
 
     var repository: FetchContactsRepositoryType
-    init(repository: FetchContactsRepositoryType = FetchContactsRepository()) {
+    init(repository: FetchContactsRepositoryType) {
         self.repository = repository
     }
 

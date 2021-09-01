@@ -1,9 +1,11 @@
 import Foundation
 
 protocol ListContactsViewModelInput {
-    var contactViewModels: [ContactCellViewModel] { get }
+    var contactViewModels: [ContactCellViewModelInput] { get }
     var output: ListContactsViewModelOutput? { get set }
     var title: String { get }
+    func fetchContacts()
+    func onSelectItem(index: Int)
 }
 
 protocol ListContactsViewModelOutput {
@@ -19,21 +21,19 @@ class ListContactsViewModel: ListContactsViewModelInput {
 
     var output: ListContactsViewModelOutput?
 
-    private(set) lazy var contactViewModels: [ContactCellViewModel] = {
-        [ContactCellViewModel]()
+    private(set) lazy var contactViewModels: [ContactCellViewModelInput] = {
+        [ContactCellViewModelInput]()
     }()
 
     private(set) var title: String = "Lista de contatos"
 
     private var fetchContactsUseCase: FetchContactsUseCaseInput
-    private var checkLegacyUsersUseCase: CheckLegacyUsersUseCaseType
 
-    init(fetchContactsUseCase: FetchContactsUseCaseInput = FetchContactsUseCase(),
-         checkLegacyUsersUseCase: CheckLegacyUsersUseCaseType = CheckLegacyUsersUseCase()) {
+    init(fetchContactsUseCase: FetchContactsUseCaseInput) {
         self.fetchContactsUseCase = fetchContactsUseCase
-        self.checkLegacyUsersUseCase = checkLegacyUsersUseCase
     }
-    func loadContacts() {
+    
+    func fetchContacts() {
         self.output?.showLoading()
         fetchContactsUseCase.fetchContacts(output: self)
     }
@@ -53,7 +53,7 @@ class ListContactsViewModel: ListContactsViewModelInput {
 extension ListContactsViewModel: FetchContactsUseCaseOutput {
 
     func onFecthContactsSuccess(contacts: [Contact]) {
-        self.contactViewModels = contacts.map {ContactCellViewModel.init(contact: $0) }
+        self.contactViewModels = contacts.map(ListContactsViewAssembler.makeContactCellViewModel)
         DispatchQueue.main.async { [weak self] in
             self?.output?.hideLoading()
             self?.output?.reloadData()

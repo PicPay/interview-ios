@@ -43,9 +43,9 @@ class ContactCell: UITableViewCell {
 }
 
 extension ContactCell {
-    func bindViewModel(viewModel: ContactCellViewModel) {
+    func bindViewModel(viewModel: ContactCellViewModelInput) {
         fullnameLabel.text = viewModel.name
-        viewModel.output = self
+        viewModel.setOutput(output: self)
         viewModel.loadImage()
     }
 }
