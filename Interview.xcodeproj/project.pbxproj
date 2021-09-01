@@ -30,6 +30,9 @@
 		1E03DB6826DF5BA5002393F4 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E59426DD55280088A0F9 /* AppConfiguration.swift */; };
 		1E03DB8A26DF7312002393F4 /* ImageURLProtocol+IntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E03DB8926DF7312002393F4 /* ImageURLProtocol+IntegrationTests.swift */; };
 		1E03DBC126DF797B002393F4 /* FetchContactsUseCaseOutput+Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E03DBBD26DF797B002393F4 /* FetchContactsUseCaseOutput+Mocks.swift */; };
+		1E03DBC726DF7D21002393F4 /* Contact+Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E03DBC626DF7D21002393F4 /* Contact+Mocks.swift */; };
+		1E03DBD126DF7D30002393F4 /* ContactTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E03DBCB26DF7D30002393F4 /* ContactTests.swift */; };
+		1E03DBD626DF7DBA002393F4 /* Contact+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E03DBD526DF7DBA002393F4 /* Contact+Equatable.swift */; };
 		1E09E57926DD2EEC0088A0F9 /* FetchContactsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E57826DD2EEC0088A0F9 /* FetchContactsUseCase.swift */; };
 		1E09E58D26DD4D5F0088A0F9 /* ContactResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E58C26DD4D5F0088A0F9 /* ContactResponseDTO.swift */; };
 		1E09E59526DD55280088A0F9 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E59426DD55280088A0F9 /* AppConfiguration.swift */; };
@@ -50,6 +53,10 @@
 		1E59B81E26DBC71700622D59 /* ListContactsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E59B81D26DBC71700622D59 /* ListContactsUITests.swift */; };
 		1E8C8E7326DBCD420034CA83 /* XCUIElement+Asserts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8C8E7226DBCD420034CA83 /* XCUIElement+Asserts.swift */; };
 		1E8C8E7526DBD1380034CA83 /* XCUIApplication+Asserts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8C8E7426DBD1380034CA83 /* XCUIApplication+Asserts.swift */; };
+		1EC6E36B26DFC30000D2474E /* FetchContactsUseCase+Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC6E36A26DFC30000D2474E /* FetchContactsUseCase+Mocks.swift */; };
+		1EC6E36F26DFC31000D2474E /* FetchContactsRepository+Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC6E36E26DFC31000D2474E /* FetchContactsRepository+Mocks.swift */; };
+		1EC6E37426DFC40E00D2474E /* FetchContactsUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC6E37326DFC40E00D2474E /* FetchContactsUseCaseTests.swift */; };
+		1EC6E37826DFC5CE00D2474E /* ListContactsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC6E37726DFC5CE00D2474E /* ListContactsViewModelTests.swift */; };
 		6AB24DC023EB546D00530BA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB24DBF23EB546D00530BA5 /* AppDelegate.swift */; };
 		6AB24DC223EB546D00530BA5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB24DC123EB546D00530BA5 /* SceneDelegate.swift */; };
 		6AB24DC923EB546F00530BA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AB24DC823EB546F00530BA5 /* Assets.xcassets */; };
@@ -82,6 +89,9 @@
 		1E03DB5326DF58EA002393F4 /* FetchContactsUseCaseIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchContactsUseCaseIntegrationTests.swift; sourceTree = "<group>"; };
 		1E03DB8926DF7312002393F4 /* ImageURLProtocol+IntegrationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ImageURLProtocol+IntegrationTests.swift"; sourceTree = "<group>"; };
 		1E03DBBD26DF797B002393F4 /* FetchContactsUseCaseOutput+Mocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FetchContactsUseCaseOutput+Mocks.swift"; sourceTree = "<group>"; };
+		1E03DBC626DF7D21002393F4 /* Contact+Mocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Contact+Mocks.swift"; sourceTree = "<group>"; };
+		1E03DBCB26DF7D30002393F4 /* ContactTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTests.swift; sourceTree = "<group>"; };
+		1E03DBD526DF7DBA002393F4 /* Contact+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+Equatable.swift"; sourceTree = "<group>"; };
 		1E09E57826DD2EEC0088A0F9 /* FetchContactsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchContactsUseCase.swift; sourceTree = "<group>"; };
 		1E09E58C26DD4D5F0088A0F9 /* ContactResponseDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactResponseDTO.swift; sourceTree = "<group>"; };
 		1E09E59426DD55280088A0F9 /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
@@ -104,6 +114,10 @@
 		1E59B81D26DBC71700622D59 /* ListContactsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListContactsUITests.swift; sourceTree = "<group>"; };
 		1E8C8E7226DBCD420034CA83 /* XCUIElement+Asserts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIElement+Asserts.swift"; sourceTree = "<group>"; };
 		1E8C8E7426DBD1380034CA83 /* XCUIApplication+Asserts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Asserts.swift"; sourceTree = "<group>"; };
+		1EC6E36A26DFC30000D2474E /* FetchContactsUseCase+Mocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FetchContactsUseCase+Mocks.swift"; sourceTree = "<group>"; };
+		1EC6E36E26DFC31000D2474E /* FetchContactsRepository+Mocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FetchContactsRepository+Mocks.swift"; sourceTree = "<group>"; };
+		1EC6E37326DFC40E00D2474E /* FetchContactsUseCaseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchContactsUseCaseTests.swift; sourceTree = "<group>"; };
+		1EC6E37726DFC5CE00D2474E /* ListContactsViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListContactsViewModelTests.swift; sourceTree = "<group>"; };
 		6AB24DBC23EB546D00530BA5 /* Interview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Interview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AB24DBF23EB546D00530BA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6AB24DC123EB546D00530BA5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -195,6 +209,7 @@
 		1E03DBB526DF797B002393F4 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				1EC6E36C26DFC31000D2474E /* Data */,
 				1E03DBB926DF797B002393F4 /* Domain */,
 			);
 			path = Mocks;
@@ -203,6 +218,7 @@
 		1E03DBB926DF797B002393F4 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				1E03DBC526DF7D21002393F4 /* Models */,
 				1E03DBBC26DF797B002393F4 /* UseCases */,
 			);
 			path = Domain;
@@ -211,9 +227,53 @@
 		1E03DBBC26DF797B002393F4 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				1EC6E36A26DFC30000D2474E /* FetchContactsUseCase+Mocks.swift */,
 				1E03DBBD26DF797B002393F4 /* FetchContactsUseCaseOutput+Mocks.swift */,
 			);
 			path = UseCases;
+			sourceTree = "<group>";
+		};
+		1E03DBC526DF7D21002393F4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1E03DBC626DF7D21002393F4 /* Contact+Mocks.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1E03DBC826DF7D30002393F4 /* Units */ = {
+			isa = PBXGroup;
+			children = (
+				1E03DBD426DF7D9F002393F4 /* Extensions */,
+				1E03DBC926DF7D30002393F4 /* Domain */,
+				1EC6E37526DFC5CE00D2474E /* Presentation */,
+			);
+			path = Units;
+			sourceTree = "<group>";
+		};
+		1E03DBC926DF7D30002393F4 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				1E03DBCA26DF7D30002393F4 /* Models */,
+				1EC6E37226DFC40E00D2474E /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		1E03DBCA26DF7D30002393F4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1E03DBCB26DF7D30002393F4 /* ContactTests.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1E03DBD426DF7D9F002393F4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1E03DBD526DF7DBA002393F4 /* Contact+Equatable.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		1E09E56D26DD2A5B0088A0F9 /* Data */ = {
@@ -392,6 +452,46 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		1EC6E36C26DFC31000D2474E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				1EC6E36D26DFC31000D2474E /* Repositories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		1EC6E36D26DFC31000D2474E /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				1EC6E36E26DFC31000D2474E /* FetchContactsRepository+Mocks.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		1EC6E37226DFC40E00D2474E /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				1EC6E37326DFC40E00D2474E /* FetchContactsUseCaseTests.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		1EC6E37526DFC5CE00D2474E /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				1EC6E37626DFC5CE00D2474E /* ViewModels */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		1EC6E37626DFC5CE00D2474E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				1EC6E37726DFC5CE00D2474E /* ListContactsViewModelTests.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		6AB24DB323EB546D00530BA5 = {
 			isa = PBXGroup;
 			children = (
@@ -430,8 +530,9 @@
 		6AB24DD523EB546F00530BA5 /* InterviewTests */ = {
 			isa = PBXGroup;
 			children = (
-				1E03DBB526DF797B002393F4 /* Mocks */,
 				1E03DB4F26DF5846002393F4 /* Integrations */,
+				1E03DBB526DF797B002393F4 /* Mocks */,
+				1E03DBC826DF7D30002393F4 /* Units */,
 				6AB24DD823EB546F00530BA5 /* Info.plist */,
 			);
 			path = InterviewTests;
@@ -678,10 +779,14 @@
 				1E03DB6526DF5B8C002393F4 /* Contact+Mappers.swift in Sources */,
 				1E03DB5D26DF5B10002393F4 /* Contact.swift in Sources */,
 				1E03DB6126DF5B42002393F4 /* HttpClient.swift in Sources */,
+				1EC6E36B26DFC30000D2474E /* FetchContactsUseCase+Mocks.swift in Sources */,
 				1E03DB5426DF58EA002393F4 /* FetchContactsUseCaseIntegrationTests.swift in Sources */,
 				1E03DB5C26DF5B0A002393F4 /* CheckLegacyUsersUseCase.swift in Sources */,
 				1E03DB5F26DF5B16002393F4 /* FetchContactsRepository.swift in Sources */,
+				1EC6E36F26DFC31000D2474E /* FetchContactsRepository+Mocks.swift in Sources */,
+				1E03DBC726DF7D21002393F4 /* Contact+Mocks.swift in Sources */,
 				1E03DB8A26DF7312002393F4 /* ImageURLProtocol+IntegrationTests.swift in Sources */,
+				1EC6E37426DFC40E00D2474E /* FetchContactsUseCaseTests.swift in Sources */,
 				1E03DB6326DF5B59002393F4 /* ImageURLProtocol.swift in Sources */,
 				1E03DB6826DF5BA5002393F4 /* AppConfiguration.swift in Sources */,
 				1E03DB6626DF5B90002393F4 /* ContactResponseDTO.swift in Sources */,
@@ -689,9 +794,12 @@
 				1E03DB5726DF5AEA002393F4 /* ListContactsViewController.swift in Sources */,
 				1E03DB6726DF5B94002393F4 /* URLRequest+APIs.swift in Sources */,
 				1E03DBC126DF797B002393F4 /* FetchContactsUseCaseOutput+Mocks.swift in Sources */,
+				1E03DBD126DF7D30002393F4 /* ContactTests.swift in Sources */,
 				1E03DB5526DF59AA002393F4 /* ListContactsViewAssembler.swift in Sources */,
 				1E03DB5B26DF5B0A002393F4 /* FetchContactsUseCase.swift in Sources */,
 				1E03DB5E26DF5B10002393F4 /* User.swift in Sources */,
+				1EC6E37826DFC5CE00D2474E /* ListContactsViewModelTests.swift in Sources */,
+				1E03DBD626DF7DBA002393F4 /* Contact+Equatable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

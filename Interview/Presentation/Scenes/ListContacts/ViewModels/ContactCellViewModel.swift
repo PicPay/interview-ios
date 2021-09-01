@@ -18,7 +18,7 @@ protocol ContactCellViewModelInput {
 protocol ContactViewModelOutput {
     func setPhotoImage(image: UIImage?)
 }
-
+// MARK: ContactCellViewModelInput
 final class ContactCellViewModel: ContactCellViewModelInput {
 
     var output: ContactViewModelOutput?
@@ -33,28 +33,48 @@ final class ContactCellViewModel: ContactCellViewModelInput {
     }
 
     lazy var name: String = {
-        contact.name
+        self.contact.name
     }()
 
     lazy var isLegacy: Bool = {
-        checkLegacyUsersUseCase.isLegacy(userId: contact.id)
+        self.checkLegacyUsersUseCase.isLegacy(userId: contact.id)
     }()
 
     func loadImage() {
-        self.output?.setPhotoImage(image: nil) // or UIImage(named: "placeholder")
-        if let urlPhoto = URL(string: contact.photoURL) as NSURL? {
+        self.setPlaceHolderImage()
+        self.fetchImage()
+    }
+
+    func setOutput(output: ContactViewModelOutput?) {
+        self.output = output
+    }
+}
+// MARK: Private methods
+extension ContactCellViewModel {
+
+    private func distinctPhotoURL() -> String {
+        self.contact.photoURL.appending("?k=\(contact.id)")
+    }
+
+    private func setPlaceHolderImage() {
+        let placeholderImage: UIImage? = nil // or UIImage(named: "placeholder")
+        self.notifyPhotoImageChanged(image: placeholderImage)
+    }
+
+    private func fetchImage() {
+        if let urlPhoto = URL(string: self.distinctPhotoURL()) as NSURL? {
             ImageCache.publicCache.load(url: urlPhoto) { [weak self] (url, image) in
                 guard self != nil else {
                     return
                 }
                 if let photoImage = image, urlPhoto == url {
-                    self?.output?.setPhotoImage(image: photoImage)
+                    self?.notifyPhotoImageChanged(image: photoImage)
                 }
             }
         }
     }
 
-    func setOutput(output: ContactViewModelOutput?) {
-        self.output = output
+    private func notifyPhotoImageChanged(image: UIImage?) {
+        self.output?.setPhotoImage(image: image)
     }
 }

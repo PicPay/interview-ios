@@ -9,25 +9,25 @@ import XCTest
 
 class FetchContactsUseCaseOutputMock: FetchContactsUseCaseOutput {
     
-    var onFecthContactsSuccessClosure: ([Contact]) -> Void = {_ in}
-    var onFecthContactsFailedClosure: (Error) -> Void = {_ in}
+    var onFetchContactsSuccessClosure: ([Contact]) -> Void = {_ in}
+    var onFetchContactsFailedClosure: (Error) -> Void = {_ in}
 
-    var isOnFecthContactsSuccessCalled = false
-    var isOnFecthContactsFailedCalled = false
+    var isOnFetchContactsSuccessCalled = false
+    var isOnFetchContactsFailedCalled = false
 
-    var onFecthContactsSuccessCallCount = 0
-    var onFecthContactsFailedCallCount = 0
+    var onFetchContactsSuccessCallCount = 0
+    var onFetchContactsFailedCallCount = 0
 
-    func onFecthContactsSuccess(contacts: [Contact]) {
-        isOnFecthContactsSuccessCalled = true
-        onFecthContactsSuccessCallCount += 1
-        onFecthContactsSuccessClosure(contacts)
+    func onFetchContactsSuccess(contacts: [Contact]) {
+        isOnFetchContactsSuccessCalled = true
+        onFetchContactsSuccessCallCount += 1
+        onFetchContactsSuccessClosure(contacts)
        
     }
 
-    func onFecthContactsFailed(error: Error) {
-        isOnFecthContactsFailedCalled = true
-        onFecthContactsFailedCallCount += 1
-        onFecthContactsFailedClosure(error)
+    func onFetchContactsFailed(error: Error) {
+        isOnFetchContactsFailedCalled = true
+        onFetchContactsFailedCallCount += 1
+        onFetchContactsFailedClosure(error)
     }
 }

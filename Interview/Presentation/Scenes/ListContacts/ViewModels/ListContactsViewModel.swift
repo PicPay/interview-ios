@@ -52,7 +52,7 @@ class ListContactsViewModel: ListContactsViewModelInput {
 
 extension ListContactsViewModel: FetchContactsUseCaseOutput {
 
-    func onFecthContactsSuccess(contacts: [Contact]) {
+    func onFetchContactsSuccess(contacts: [Contact]) {
         self.contactViewModels = contacts.map(ListContactsViewAssembler.makeContactCellViewModel)
         DispatchQueue.main.async { [weak self] in
             self?.output?.hideLoading()
@@ -60,7 +60,7 @@ extension ListContactsViewModel: FetchContactsUseCaseOutput {
         }
     }
 
-    func onFecthContactsFailed(error: Error) {
+    func onFetchContactsFailed(error: Error) {
         DispatchQueue.main.async { [weak self] in
             self?.output?.hideLoading()
             self?.handleError(error)
