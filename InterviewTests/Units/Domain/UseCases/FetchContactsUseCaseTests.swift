@@ -28,7 +28,7 @@ class FetchContactsUseCaseTests: XCTestCase {
     private func fetchContacts() {
         systemUnderTest.fetchContacts(output: outputMock)
         XCTAssertTrue(repositoryMock.isFetchContactsCalled, "Method was not called.")
-        XCTAssertEqual(repositoryMock.FetchContactsCallCount, 1, "Invalid method callCount times.")
+        XCTAssertEqual(repositoryMock.fetchContactsCallCount, 1, "Invalid method callCount times.")
     }
 }
 
