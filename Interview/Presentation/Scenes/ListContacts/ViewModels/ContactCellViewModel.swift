@@ -7,28 +7,27 @@
 
 import UIKit
 
-protocol ContactViewModelInput {
-
-    var output: ContactViewModelOutput! { get set }
-
+protocol ContactCellViewModelInput {
     var name: String { get }
+    var isLegacy: Bool { get }
 
     func loadImage()
+    func setOutput(output: ContactViewModelOutput?)
 }
 
 protocol ContactViewModelOutput {
     func setPhotoImage(image: UIImage?)
 }
 
-final class ContactCellViewModel: ContactViewModelInput {
+final class ContactCellViewModel: ContactCellViewModelInput {
 
-    var output: ContactViewModelOutput!
+    var output: ContactViewModelOutput?
     private var contact: Contact!
 
     private var checkLegacyUsersUseCase: CheckLegacyUsersUseCaseType
 
     init(contact: Contact,
-         checkLegacyUsersUseCase: CheckLegacyUsersUseCaseType = CheckLegacyUsersUseCase()) {
+         checkLegacyUsersUseCase: CheckLegacyUsersUseCaseType) {
         self.contact = contact
         self.checkLegacyUsersUseCase = checkLegacyUsersUseCase
     }
@@ -53,5 +52,9 @@ final class ContactCellViewModel: ContactViewModelInput {
                 }
             }
         }
+    }
+
+    func setOutput(output: ContactViewModelOutput?) {
+        self.output = output
     }
 }

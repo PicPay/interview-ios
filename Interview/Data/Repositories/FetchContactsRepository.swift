@@ -12,13 +12,13 @@ protocol FetchContactsRepositoryType {
 }
 
 class FetchContactsRepository: FetchContactsRepositoryType {
-    var dataSource: ContactDataSourceType!
+    var remotedataSource: ContactDataSourceType!
 
-    init(remoteDataSource: ContactDataSourceType = NetworkContactDataSource()) {
-        self.dataSource = remoteDataSource
+    init(remoteDataSource: ContactDataSourceType) {
+        self.remotedataSource = remoteDataSource
     }
     
     func fetchContacts(completion: @escaping (Result<[Contact], Error>) -> Void) {
-        dataSource.getAll(completion: completion)
+        remotedataSource.getAll(completion: completion)
     }
 }

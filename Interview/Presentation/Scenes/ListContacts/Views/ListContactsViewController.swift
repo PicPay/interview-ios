@@ -2,8 +2,17 @@ import UIKit
 
 class ListContactsViewController: UIViewController {
 
-    var viewModel: ListContactsViewModel!
-    
+    private var viewModel: ListContactsViewModelInput
+
+    init(viewModel: ListContactsViewModelInput) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     lazy var activity: UIActivityIndicatorView = {
         let activity = UIActivityIndicatorView()
         activity.hidesWhenStopped = true
@@ -28,10 +37,9 @@ class ListContactsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = ListContactsViewModel()
         viewModel.output = self
         configureViews()
-        viewModel.loadContacts()
+        viewModel.fetchContacts()
     }
 
     func configureViews() {

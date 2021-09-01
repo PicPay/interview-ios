@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E03DB4C26DF4A8C002393F4 /* ListContactsViewAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E03DB4B26DF4A8C002393F4 /* ListContactsViewAssembler.swift */; };
 		1E09E57926DD2EEC0088A0F9 /* FetchContactsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E57826DD2EEC0088A0F9 /* FetchContactsUseCase.swift */; };
 		1E09E58D26DD4D5F0088A0F9 /* ContactResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E58C26DD4D5F0088A0F9 /* ContactResponseDTO.swift */; };
 		1E09E59526DD55280088A0F9 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E59426DD55280088A0F9 /* AppConfiguration.swift */; };
@@ -56,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E03DB4B26DF4A8C002393F4 /* ListContactsViewAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListContactsViewAssembler.swift; sourceTree = "<group>"; };
 		1E09E57826DD2EEC0088A0F9 /* FetchContactsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchContactsUseCase.swift; sourceTree = "<group>"; };
 		1E09E58C26DD4D5F0088A0F9 /* ContactResponseDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactResponseDTO.swift; sourceTree = "<group>"; };
 		1E09E59426DD55280088A0F9 /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
@@ -118,6 +120,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E03DB4926DF491E002393F4 /* DependencyInjection */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DependencyInjection;
+			sourceTree = "<group>";
+		};
+		1E03DB4A26DF4A69002393F4 /* Assembler */ = {
+			isa = PBXGroup;
+			children = (
+				1E03DB4B26DF4A8C002393F4 /* ListContactsViewAssembler.swift */,
+			);
+			path = Assembler;
+			sourceTree = "<group>";
+		};
 		1E09E56D26DD2A5B0088A0F9 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -320,6 +337,7 @@
 				1E09E59626DD55400088A0F9 /* Application */,
 				1E09E5B926DDAA290088A0F9 /* LocalCachePlatform */,
 				1E09E56D26DD2A5B0088A0F9 /* Data */,
+				1E03DB4926DF491E002393F4 /* DependencyInjection */,
 				1E09E56F26DD2A6A0088A0F9 /* Domain */,
 				1E09E57F26DD4B760088A0F9 /* NetworkPlatform */,
 				1E09E56E26DD2A600088A0F9 /* Presentation */,
@@ -349,6 +367,7 @@
 		6AB24DEC23EB550100530BA5 /* ListContacts */ = {
 			isa = PBXGroup;
 			children = (
+				1E03DB4A26DF4A69002393F4 /* Assembler */,
 				6AB24DF023EB552D00530BA5 /* ViewModels */,
 				6AB24DF623EB557200530BA5 /* Views */,
 			);
@@ -562,6 +581,7 @@
 				6AB24DF823EB558D00530BA5 /* ContactCell.swift in Sources */,
 				1E09E59F26DD68250088A0F9 /* Contact+Mappers.swift in Sources */,
 				6AB24DC223EB546D00530BA5 /* SceneDelegate.swift in Sources */,
+				1E03DB4C26DF4A8C002393F4 /* ListContactsViewAssembler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
