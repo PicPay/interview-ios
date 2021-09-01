@@ -64,3 +64,34 @@ extension FetchContactsUseCaseTests {
         wait(for: [expectation], timeout: 1)
     }
 }
+
+// MARK: Unit Tests - Failure cases
+extension FetchContactsUseCaseTests {
+    func test_fetch_contacts_notConnectedToInternet() {
+
+        let expectation = XCTestExpectation(description: """
+    Given: No internet connection
+    When:  its attempt to fetch contacts
+    Then:  It should return a notConnectedToInternet error
+    """)
+
+
+        let expectedError = URLError(.notConnectedToInternet)
+        repositoryMock.result = .failure(expectedError)
+
+
+        outputMock.onFecthContactsSuccessClosure = { contacts in
+            XCTFail("Invalid result")
+            expectation.fulfill()
+        }
+        outputMock.onFecthContactsFailedClosure = { error in
+            XCTAssertEqual(error as! URLError, expectedError, "Invalid error code.")
+            expectation.fulfill()
+        }
+
+
+        fetchContacts()
+
+        wait(for: [expectation], timeout: 1)
+    }
+}
