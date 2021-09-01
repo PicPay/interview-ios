@@ -29,3 +29,10 @@ extension ContactTests {
         XCTAssertTrue(contact == expectedContact, "Is not the same.")
     }
 }
+
+// MARK: Unit Tests - Failure Cases
+extension ContactTests {
+    func test_decode_invalid_contact_json_data() {
+        XCTAssertThrowsError(try mockedContacts(data: invalidContactData), "Should fail when use invalid data.")
+    }
+}
