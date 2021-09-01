@@ -12,8 +12,8 @@ protocol FetchContactsUseCaseInput {
 }
 
 protocol FetchContactsUseCaseOutput {
-    func onFecthContactsSuccess(contacts:[Contact])
-    func onFecthContactsFailed(error: Error)
+    func onFetchContactsSuccess(contacts:[Contact])
+    func onFetchContactsFailed(error: Error)
 }
 
 class FetchContactsUseCase: FetchContactsUseCaseInput {
@@ -27,9 +27,9 @@ class FetchContactsUseCase: FetchContactsUseCaseInput {
         repository.fetchContacts { result in
             switch result {
             case .success(let contacts):
-                output?.onFecthContactsSuccess(contacts: contacts)
+                output?.onFetchContactsSuccess(contacts: contacts)
             case .failure(let error):
-                output?.onFecthContactsFailed(error: error)
+                output?.onFetchContactsFailed(error: error)
             }
         }
     }
