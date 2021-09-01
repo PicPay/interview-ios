@@ -8,6 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		1E03DB4C26DF4A8C002393F4 /* ListContactsViewAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E03DB4B26DF4A8C002393F4 /* ListContactsViewAssembler.swift */; };
+		1E03DB5426DF58EA002393F4 /* FetchContactsUseCaseIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E03DB5326DF58EA002393F4 /* FetchContactsUseCaseIntegrationTests.swift */; };
+		1E03DB5526DF59AA002393F4 /* ListContactsViewAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E03DB4B26DF4A8C002393F4 /* ListContactsViewAssembler.swift */; };
+		1E03DB5726DF5AEA002393F4 /* ListContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB24DE923EB54E800530BA5 /* ListContactsViewController.swift */; };
+		1E03DB5826DF5AF0002393F4 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB24DF723EB558D00530BA5 /* ContactCell.swift */; };
+		1E03DB5926DF5AF8002393F4 /* ContactCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E5E426DE72300088A0F9 /* ContactCellViewModel.swift */; };
+		1E03DB5A26DF5AFB002393F4 /* ListContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB24DF123EB554300530BA5 /* ListContactsViewModel.swift */; };
+		1E03DB5B26DF5B0A002393F4 /* FetchContactsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E57826DD2EEC0088A0F9 /* FetchContactsUseCase.swift */; };
+		1E03DB5C26DF5B0A002393F4 /* CheckLegacyUsersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E5E226DE6C430088A0F9 /* CheckLegacyUsersUseCase.swift */; };
+		1E03DB5D26DF5B10002393F4 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB24DEE23EB552100530BA5 /* Contact.swift */; };
+		1E03DB5E26DF5B10002393F4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E5E026DE6BF90088A0F9 /* User.swift */; };
+		1E03DB5F26DF5B16002393F4 /* FetchContactsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E5B126DD82E70088A0F9 /* FetchContactsRepository.swift */; };
+		1E03DB6026DF5B1A002393F4 /* ContactDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E5AC26DD81D40088A0F9 /* ContactDataSource.swift */; };
+		1E03DB6126DF5B42002393F4 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E5A726DD80210088A0F9 /* HttpClient.swift */; };
+		1E03DB6226DF5B53002393F4 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E5C126DDAF980088A0F9 /* ImageCache.swift */; };
+		1E03DB6326DF5B59002393F4 /* ImageURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E5CF26DDEA960088A0F9 /* ImageURLProtocol.swift */; };
+		1E03DB6426DF5B84002393F4 /* NetworkContactDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E5DC26DE65500088A0F9 /* NetworkContactDataSource.swift */; };
+		1E03DB6526DF5B8C002393F4 /* Contact+Mappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E59D26DD68250088A0F9 /* Contact+Mappers.swift */; };
+		1E03DB6626DF5B90002393F4 /* ContactResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E58C26DD4D5F0088A0F9 /* ContactResponseDTO.swift */; };
+		1E03DB6726DF5B94002393F4 /* URLRequest+APIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E59926DD68160088A0F9 /* URLRequest+APIs.swift */; };
+		1E03DB6826DF5BA5002393F4 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E59426DD55280088A0F9 /* AppConfiguration.swift */; };
+		1E03DB8A26DF7312002393F4 /* ImageURLProtocol+IntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E03DB8926DF7312002393F4 /* ImageURLProtocol+IntegrationTests.swift */; };
+		1E03DBC126DF797B002393F4 /* FetchContactsUseCaseOutput+Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E03DBBD26DF797B002393F4 /* FetchContactsUseCaseOutput+Mocks.swift */; };
 		1E09E57926DD2EEC0088A0F9 /* FetchContactsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E57826DD2EEC0088A0F9 /* FetchContactsUseCase.swift */; };
 		1E09E58D26DD4D5F0088A0F9 /* ContactResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E58C26DD4D5F0088A0F9 /* ContactResponseDTO.swift */; };
 		1E09E59526DD55280088A0F9 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09E59426DD55280088A0F9 /* AppConfiguration.swift */; };
@@ -36,7 +58,6 @@
 		6AB24DEF23EB552100530BA5 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB24DEE23EB552100530BA5 /* Contact.swift */; };
 		6AB24DF223EB554300530BA5 /* ListContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB24DF123EB554300530BA5 /* ListContactsViewModel.swift */; };
 		6AB24DF823EB558D00530BA5 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB24DF723EB558D00530BA5 /* ContactCell.swift */; };
-		6ABE2F9024CEF691009D7593 /* ListContactServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABE2F8F24CEF691009D7593 /* ListContactServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +79,9 @@
 
 /* Begin PBXFileReference section */
 		1E03DB4B26DF4A8C002393F4 /* ListContactsViewAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListContactsViewAssembler.swift; sourceTree = "<group>"; };
+		1E03DB5326DF58EA002393F4 /* FetchContactsUseCaseIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchContactsUseCaseIntegrationTests.swift; sourceTree = "<group>"; };
+		1E03DB8926DF7312002393F4 /* ImageURLProtocol+IntegrationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ImageURLProtocol+IntegrationTests.swift"; sourceTree = "<group>"; };
+		1E03DBBD26DF797B002393F4 /* FetchContactsUseCaseOutput+Mocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FetchContactsUseCaseOutput+Mocks.swift"; sourceTree = "<group>"; };
 		1E09E57826DD2EEC0088A0F9 /* FetchContactsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchContactsUseCase.swift; sourceTree = "<group>"; };
 		1E09E58C26DD4D5F0088A0F9 /* ContactResponseDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactResponseDTO.swift; sourceTree = "<group>"; };
 		1E09E59426DD55280088A0F9 /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
@@ -92,7 +116,6 @@
 		6AB24DEE23EB552100530BA5 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		6AB24DF123EB554300530BA5 /* ListContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListContactsViewModel.swift; sourceTree = "<group>"; };
 		6AB24DF723EB558D00530BA5 /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
-		6ABE2F8F24CEF691009D7593 /* ListContactServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListContactServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,19 +143,77 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1E03DB4926DF491E002393F4 /* DependencyInjection */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DependencyInjection;
-			sourceTree = "<group>";
-		};
 		1E03DB4A26DF4A69002393F4 /* Assembler */ = {
 			isa = PBXGroup;
 			children = (
 				1E03DB4B26DF4A8C002393F4 /* ListContactsViewAssembler.swift */,
 			);
 			path = Assembler;
+			sourceTree = "<group>";
+		};
+		1E03DB4F26DF5846002393F4 /* Integrations */ = {
+			isa = PBXGroup;
+			children = (
+				1E03DB8726DF7312002393F4 /* NetworkPlatform */,
+				1E03DB5126DF5885002393F4 /* Domain */,
+			);
+			path = Integrations;
+			sourceTree = "<group>";
+		};
+		1E03DB5126DF5885002393F4 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				1E03DB5226DF5892002393F4 /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		1E03DB5226DF5892002393F4 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				1E03DB5326DF58EA002393F4 /* FetchContactsUseCaseIntegrationTests.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		1E03DB8726DF7312002393F4 /* NetworkPlatform */ = {
+			isa = PBXGroup;
+			children = (
+				1E03DB8826DF7312002393F4 /* Image */,
+			);
+			path = NetworkPlatform;
+			sourceTree = "<group>";
+		};
+		1E03DB8826DF7312002393F4 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				1E03DB8926DF7312002393F4 /* ImageURLProtocol+IntegrationTests.swift */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		1E03DBB526DF797B002393F4 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				1E03DBB926DF797B002393F4 /* Domain */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		1E03DBB926DF797B002393F4 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				1E03DBBC26DF797B002393F4 /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		1E03DBBC26DF797B002393F4 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				1E03DBBD26DF797B002393F4 /* FetchContactsUseCaseOutput+Mocks.swift */,
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 		1E09E56D26DD2A5B0088A0F9 /* Data */ = {
@@ -337,7 +418,6 @@
 				1E09E59626DD55400088A0F9 /* Application */,
 				1E09E5B926DDAA290088A0F9 /* LocalCachePlatform */,
 				1E09E56D26DD2A5B0088A0F9 /* Data */,
-				1E03DB4926DF491E002393F4 /* DependencyInjection */,
 				1E09E56F26DD2A6A0088A0F9 /* Domain */,
 				1E09E57F26DD4B760088A0F9 /* NetworkPlatform */,
 				1E09E56E26DD2A600088A0F9 /* Presentation */,
@@ -350,7 +430,8 @@
 		6AB24DD523EB546F00530BA5 /* InterviewTests */ = {
 			isa = PBXGroup;
 			children = (
-				6ABE2F8F24CEF691009D7593 /* ListContactServiceTests.swift */,
+				1E03DBB526DF797B002393F4 /* Mocks */,
+				1E03DB4F26DF5846002393F4 /* Integrations */,
 				6AB24DD823EB546F00530BA5 /* Info.plist */,
 			);
 			path = InterviewTests;
@@ -589,7 +670,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6ABE2F9024CEF691009D7593 /* ListContactServiceTests.swift in Sources */,
+				1E03DB6226DF5B53002393F4 /* ImageCache.swift in Sources */,
+				1E03DB5A26DF5AFB002393F4 /* ListContactsViewModel.swift in Sources */,
+				1E03DB6026DF5B1A002393F4 /* ContactDataSource.swift in Sources */,
+				1E03DB6426DF5B84002393F4 /* NetworkContactDataSource.swift in Sources */,
+				1E03DB5826DF5AF0002393F4 /* ContactCell.swift in Sources */,
+				1E03DB6526DF5B8C002393F4 /* Contact+Mappers.swift in Sources */,
+				1E03DB5D26DF5B10002393F4 /* Contact.swift in Sources */,
+				1E03DB6126DF5B42002393F4 /* HttpClient.swift in Sources */,
+				1E03DB5426DF58EA002393F4 /* FetchContactsUseCaseIntegrationTests.swift in Sources */,
+				1E03DB5C26DF5B0A002393F4 /* CheckLegacyUsersUseCase.swift in Sources */,
+				1E03DB5F26DF5B16002393F4 /* FetchContactsRepository.swift in Sources */,
+				1E03DB8A26DF7312002393F4 /* ImageURLProtocol+IntegrationTests.swift in Sources */,
+				1E03DB6326DF5B59002393F4 /* ImageURLProtocol.swift in Sources */,
+				1E03DB6826DF5BA5002393F4 /* AppConfiguration.swift in Sources */,
+				1E03DB6626DF5B90002393F4 /* ContactResponseDTO.swift in Sources */,
+				1E03DB5926DF5AF8002393F4 /* ContactCellViewModel.swift in Sources */,
+				1E03DB5726DF5AEA002393F4 /* ListContactsViewController.swift in Sources */,
+				1E03DB6726DF5B94002393F4 /* URLRequest+APIs.swift in Sources */,
+				1E03DBC126DF797B002393F4 /* FetchContactsUseCaseOutput+Mocks.swift in Sources */,
+				1E03DB5526DF59AA002393F4 /* ListContactsViewAssembler.swift in Sources */,
+				1E03DB5B26DF5B0A002393F4 /* FetchContactsUseCase.swift in Sources */,
+				1E03DB5E26DF5B10002393F4 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
