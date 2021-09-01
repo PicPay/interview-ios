@@ -42,7 +42,7 @@ final class ContactCellViewModel: ContactCellViewModelInput {
 
     func loadImage() {
         self.setPlaceHolderImage()
-        self.fecthImage()
+        self.fetchImage()
     }
 
     func setOutput(output: ContactViewModelOutput?) {
@@ -61,7 +61,7 @@ extension ContactCellViewModel {
         self.notifyPhotoImageChanged(image: placeholderImage)
     }
 
-    private func fecthImage() {
+    private func fetchImage() {
         if let urlPhoto = URL(string: self.distinctPhotoURL()) as NSURL? {
             ImageCache.publicCache.load(url: urlPhoto) { [weak self] (url, image) in
                 guard self != nil else {

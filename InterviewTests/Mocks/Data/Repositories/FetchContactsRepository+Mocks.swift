@@ -9,13 +9,13 @@
 import Foundation
 
 class FetchContactsRepositoryMock: FetchContactsRepositoryType {
-    var isFecthContactsCalled = false
-    var fecthContactsCallCount = 0
+    var isFetchContactsCalled = false
+    var fetchContactsCallCount = 0
     var result: Result<[Contact], Error>? = nil
 
     func fetchContacts(completion: @escaping (Result<[Contact], Error>) -> Void) {
-        isFecthContactsCalled = true
-        fecthContactsCallCount += 1
+        isFetchContactsCalled = true
+        fetchContactsCallCount += 1
         if let result = result {
             completion(result)
         }

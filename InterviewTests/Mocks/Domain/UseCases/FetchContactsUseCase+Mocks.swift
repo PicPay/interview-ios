@@ -12,19 +12,19 @@ class FetchContactsUseCaseMock: FetchContactsUseCaseInput {
     var successData: [Contact]? = nil
     var failureError: Error? = nil
 
-    var isOnFecthContactsSuccessCalled = false
-    var onFecthContactsSuccessCallCount = 0
+    var isOnFetchContactsSuccessCalled = false
+    var onFetchContactsSuccessCallCount = 0
 
     func fetchContacts(output: FetchContactsUseCaseOutput?) {
-        isOnFecthContactsSuccessCalled = true
-        onFecthContactsSuccessCallCount += 1
+        isOnFetchContactsSuccessCalled = true
+        onFetchContactsSuccessCallCount += 1
 
         if let contacts = successData {
-            output?.onFecthContactsSuccess(contacts: contacts)
+            output?.onFetchContactsSuccess(contacts: contacts)
         }
 
         if let error = failureError {
-            output?.onFecthContactsFailed(error: error)
+            output?.onFetchContactsFailed(error: error)
         }
     }
 }

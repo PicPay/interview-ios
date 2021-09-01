@@ -25,8 +25,8 @@ class ListContactsViewModelTests: XCTestCase {
 
     private func fetchContacts() {
         systemUnderTest.fetchContacts()
-        XCTAssertTrue(useCaseMock.isOnFecthContactsSuccessCalled, "Method was not called.")
-        XCTAssertEqual(useCaseMock.onFecthContactsSuccessCallCount, 1, "Invalid method callCount times.")
+        XCTAssertTrue(useCaseMock.isOnFetchContactsSuccessCalled, "Method was not called.")
+        XCTAssertEqual(useCaseMock.onFetchContactsSuccessCallCount, 1, "Invalid method callCount times.")
     }
 }
 

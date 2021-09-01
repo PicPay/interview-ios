@@ -27,8 +27,8 @@ class FetchContactsUseCaseTests: XCTestCase {
 
     private func fetchContacts() {
         systemUnderTest.fetchContacts(output: outputMock)
-        XCTAssertTrue(repositoryMock.isFecthContactsCalled, "Method was not called.")
-        XCTAssertEqual(repositoryMock.fecthContactsCallCount, 1, "Invalid method callCount times.")
+        XCTAssertTrue(repositoryMock.isFetchContactsCalled, "Method was not called.")
+        XCTAssertEqual(repositoryMock.FetchContactsCallCount, 1, "Invalid method callCount times.")
     }
 }
 
@@ -50,11 +50,11 @@ extension FetchContactsUseCaseTests {
         repositoryMock.result = .success(expectedResult)
 
 
-        outputMock.onFecthContactsSuccessClosure = { contacts in
+        outputMock.onFetchContactsSuccessClosure = { contacts in
             XCTAssertEqual(contacts, expectedResult, "Invalid result.")
             expectation.fulfill()
         }
-        outputMock.onFecthContactsFailedClosure = { error in
+        outputMock.onFetchContactsFailedClosure = { error in
             XCTFail("Invalid result")
             expectation.fulfill()
         }
@@ -80,11 +80,11 @@ extension FetchContactsUseCaseTests {
         repositoryMock.result = .failure(expectedError)
 
 
-        outputMock.onFecthContactsSuccessClosure = { contacts in
+        outputMock.onFetchContactsSuccessClosure = { contacts in
             XCTFail("Invalid result")
             expectation.fulfill()
         }
-        outputMock.onFecthContactsFailedClosure = { error in
+        outputMock.onFetchContactsFailedClosure = { error in
             XCTAssertEqual(error as! URLError, expectedError, "Invalid error code.")
             expectation.fulfill()
         }
