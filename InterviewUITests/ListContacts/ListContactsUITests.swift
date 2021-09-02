@@ -16,17 +16,17 @@ class ListContactsUITests: XCTestCase {
         app.launch()
     }
 
-    //    Given that I launch the application
-    //    When I go to contact list screen
+    //    Given that application is launched
+    //    When the contact list screen appears
     //    Then It should display the screen title
     func test_showScreenTitle() throws {
         app.shouldDisplayScreenWithTitle("Lista de contatos") 
     }
 
 
-    //    Given I open the contact list screen
-    //    When I click on the first contact's name in the list
-    //    Then It should display an alert with the contact's name
+    //    Given that application is launched and the Contact List screen is displayed
+    //    When User clicks on the first contact's name in the list
+    //    Then It should display an dialog with the selected contact's name
     func test_selectFirstContactFromList() throws {
         let contactName = "Shakira"
         app.clickOnCellWithText(contactName)
@@ -35,9 +35,9 @@ class ListContactsUITests: XCTestCase {
             .withButton(title: "OK")
     }
 
-    //    Given I open the contact list screen
-    //    When I click on a legacy contact in the list
-    //    Then It should display an alert with text "Você tocou no contato sorteado"
+    //    Given that application is launched and the Contact List screen is displayed
+    //    When User clicks on a legacy contact in the list
+    //    Then It should display an dialog with text "Você tocou no contato sorteado"
     func test_selectLegacyContactFromList() throws {
         let contactName = "Judar Lima"
         app.clickOnCellWithText(contactName)
@@ -46,9 +46,9 @@ class ListContactsUITests: XCTestCase {
             .withButton(title: "OK")
     }
 
-    //    Given I open the contact list screen
-    //    When I scroll up the contact list
-    //    Then It should take no more than 300 milli seconds
+    //    Given that application is launched and the Contact List screen is displayed
+    //    When User scroll up the contact list
+    //    Then It should take no more than 100 milli seconds
     func test_scrollContactList() throws {
         let firstCell = app.shouldDisplayCellWithText("Shakira")
 
@@ -59,7 +59,7 @@ class ListContactsUITests: XCTestCase {
             }
         }
         let average = timePerformanceMetric.average(unit: .milli).integerValue()
-        let expected = TimeMetric.init(value: 300, unit: .milli).integerValue()
-        XCTAssert(average < expected, "scrolling up the contact list should take no more than 300 ms. Current is: \(average) ms")
+        let expected = TimeMetric.init(value: 100, unit: .milli).integerValue()
+        XCTAssert(average < expected, "scrolling up the contact list should take no more than 100 ms. Current is: \(average) ms")
     }
 }
