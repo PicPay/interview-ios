@@ -5,4 +5,4 @@
 - 🖥 Esteja com sua máquina e seu Xcode funcionando normalmente;
 - ✏️ Se possível, clone ou baixe o projeto. Sinta-se à vontade para executar e estudar o projeto de antemão;
 - 🙏🏻 Caso realize alguma alteração, favor revertê-la antes da entrevista;
-- 😁 Esteja bem hidratado e aproveite, esperamos que o papo seja proveitoso pra você!
+- 😁 Esteja bem hidratado e aproveite, esperamos que o você goste de programar conosco!
