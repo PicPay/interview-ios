@@ -1,6 +1,6 @@
 import Foundation
 
-class Contact: Decodable {
+class Contact: Codable {
     var id: Int
     var name: String = ""
     var photoURL = ""
