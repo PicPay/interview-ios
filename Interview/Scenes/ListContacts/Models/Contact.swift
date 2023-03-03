@@ -1,5 +1,16 @@
 import Foundation
 
+/*
+ Json Contract
+[
+  {
+    "id": 1,
+    "name": "Shakira",
+    "photoURL": "https://api.adorable.io/avatars/285/a1.png"
+  }
+]
+*/
+
 class Contact: Codable {
     var id: Int
     var name: String = ""
