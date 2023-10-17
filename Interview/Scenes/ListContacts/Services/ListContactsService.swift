@@ -4,7 +4,7 @@ private let apiURL = "https://run.mocky.io/v3/d26d86ec-fb82-48a7-9c73-69e2cb7280
 
 protocol ListContactServiceProtocol {
     @discardableResult
-    func fetchContacts(completion: @escaping (Result<[Contact], Error>) -> Void) -> URLSessionDataTask?
+    func fetchContacts(completion: @escaping (Result<Data, Error>) -> Void) -> URLSessionDataTask?
 }
 
 final class ListContactService: ListContactServiceProtocol {
@@ -22,7 +22,7 @@ final class ListContactService: ListContactServiceProtocol {
         }
     }
     
-    @discardableResult func fetchContacts(completion: @escaping (Result<[Contact], Error>) -> Void) -> URLSessionDataTask? {
+    @discardableResult func fetchContacts(completion: @escaping (Result<Data, Error>) -> Void) -> URLSessionDataTask? {
         guard let api = URL(string: apiURL) else {
             completion(.failure(BusinessError.invalidURL))
             return nil
@@ -38,15 +38,11 @@ final class ListContactService: ListContactServiceProtocol {
             }
             switch response.statusCode {
             case 200...299:
-                do {
-                    guard let data else {
-                        completion(.failure(BusinessError.emptyReturn))
-                        return
-                    }
-                    completion(.success(try JSONDecoder().decode([Contact].self, from: data)))
-                } catch {
-                    completion(.failure(error))
+                guard let data else {
+                    completion(.failure(BusinessError.emptyReturn))
+                    return
                 }
+                completion(.success(data))
             default:
                 completion(.failure(BusinessError.httpError(statusCode: response.statusCode)))
             }

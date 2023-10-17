@@ -24,8 +24,8 @@ final class ListContactsViewModel {
     func loadContacts() {
         dataTask = service.fetchContacts { [weak self] result in
             switch result {
-            case .success(let contacts):
-                self?.handleContacts(contacts)
+            case .success(let data):
+                self?.handleContacts(data)
             case .failure(let error):
                 self?.delegate?.didReceivedError(error)
             }
@@ -36,16 +36,23 @@ final class ListContactsViewModel {
         dataTask?.cancel()
     }
     
-    private func handleContacts(_ contacts: [Contact]) {
-        viewData.contacts = contacts.map {
-            ListContactViewData.Contact(
-                id: $0.id,
-                imageURL: $0.photoURL,
-                name: $0.name
-            )
-        }
-        DispatchQueue.main.async {
-            self.delegate?.contactDidLoaded()
+    // MARK: - Private methods
+    
+    private func handleContacts(_ data: Data) {
+        do {
+            let contacts = try JSONDecoder().decode([Contact].self, from: data)
+            viewData.contacts = contacts.map {
+                ListContactViewData.Contact(
+                    id: $0.id,
+                    imageURL: $0.photoURL,
+                    name: $0.name
+                )
+            }
+            DispatchQueue.main.async {
+                self.delegate?.contactDidLoaded()
+            }
+        } catch {
+            delegate?.didReceivedError(error)
         }
     }
 }
