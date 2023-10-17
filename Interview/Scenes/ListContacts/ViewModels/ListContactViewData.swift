@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+struct ListContactViewData {
+    struct Contact {
+        let id: Int
+        let imageURL: String
+        let name: String
+    }
+    
+    var contacts = [Contact]()
+}

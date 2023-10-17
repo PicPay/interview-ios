@@ -2,28 +2,45 @@ import Foundation
 
 private let apiURL = "https://run.mocky.io/v3/d26d86ec-fb82-48a7-9c73-69e2cb728070"
 
-class ListContactService {
-    func fetchContacts(completion: @escaping ([Contact]?, Error?) -> Void) {
-        guard let api = URL(string: apiURL) else {
-            return
-        }
+protocol ListContactServiceProtocol {
+    @discardableResult
+    func fetchContacts(completion: @escaping (Result<[Contact], Error>) -> Void) -> URLSessionDataTask?
+}
+
+final class ListContactService: ListContactServiceProtocol {
+    @frozen enum BusinessError: LocalizedError {
+        case invalidURL
+        case emptyReturn
         
-        let session = URLSession.shared
-        let task = session.dataTask(with: api) { (data, response, error) in
-            guard let jsonData = data else {
+        var errorDescription: String? {
+            switch self {
+            case .emptyReturn: return "Nenhum dado retornado"
+            case .invalidURL: return "URL solicitada é inválida"
+            }
+        }
+    }
+    
+    @discardableResult func fetchContacts(completion: @escaping (Result<[Contact], Error>) -> Void) -> URLSessionDataTask? {
+        guard let api = URL(string: apiURL) else {
+            completion(.failure(BusinessError.invalidURL))
+            return nil
+        }
+        let task = URLSession.shared.dataTask(with: api) { data, response, error in
+            if let error {
+                completion(.failure(error))
                 return
             }
-            
             do {
-                let decoder = JSONDecoder()
-                let decoded = try decoder.decode([Contact].self, from: jsonData)
-                
-                completion(decoded, nil)
-            } catch let error {
-                completion(nil, error)
+                guard let data else {
+                    completion(.failure(BusinessError.emptyReturn))
+                    return
+                }
+                completion(.success(try JSONDecoder().decode([Contact].self, from: data)))
+            } catch {
+                completion(.failure(error))
             }
         }
-        
         task.resume()
+        return task
     }
 }

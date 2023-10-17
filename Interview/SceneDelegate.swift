@@ -8,7 +8,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UINavigationController(rootViewController: ListContactsViewController())
+            window.rootViewController = UINavigationController(
+                rootViewController: ListContactsViewController(
+                    viewModel: ListContactsViewModel()
+                )
+            )
             self.window = window
             window.makeKeyAndVisible()
             

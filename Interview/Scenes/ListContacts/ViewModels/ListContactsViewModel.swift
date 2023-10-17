@@ -1,26 +1,46 @@
 import Foundation
 
-class ListContactsViewModel {
-    private let service = ListContactService()
+protocol ListContactsViewModelDelegate: AnyObject {
+    func contactDidLoaded()
+    func didReceivedError(_ error: Error)
+}
+
+final class ListContactsViewModel {
+    private let service: ListContactServiceProtocol
+    private let legacyIds = [10, 11, 12, 13]
     
-    private var completion: (([Contact]?, Error?) -> Void)?
+    weak var delegate: ListContactsViewModelDelegate?
+    var viewData = ListContactViewData()
     
-    init() { }
+    init(service: ListContactServiceProtocol = ListContactService()) {
+        self.service = service
+    }
     
-    func loadContacts(_ completion: @escaping ([Contact]?, Error?) -> Void) {
-        self.completion = completion
-        service.fetchContacts { contacts, err in
-            self.handle(contacts, err)
+    func isLegacy(id: Int) -> Bool {
+        return legacyIds.contains(id)
+    }
+    
+    func loadContacts() {
+        service.fetchContacts { [weak self] result in
+            switch result {
+            case .success(let contacts):
+                self?.handleContacts(contacts)
+            case .failure(let error):
+                self?.delegate?.didReceivedError(error)
+            }
         }
     }
     
-    private func handle(_ contacts: [Contact]?, _ error: Error?) {
-        if let e = error {
-            completion?(nil, e)
+    private func handleContacts(_ contacts: [Contact]) {
+        viewData.contacts = contacts.map {
+            ListContactViewData.Contact(
+                id: $0.id,
+                imageURL: $0.photoURL,
+                name: $0.name
+            )
         }
-        
-        if let contacts = contacts {
-            completion?(contacts, nil)
+        DispatchQueue.main.async {
+            self.delegate?.contactDidLoaded()
         }
     }
 }
