@@ -11,11 +11,13 @@ final class ListContactService: ListContactServiceProtocol {
     @frozen enum BusinessError: LocalizedError {
         case invalidURL
         case emptyReturn
+        case httpError(statusCode: Int)
         
         var errorDescription: String? {
             switch self {
             case .emptyReturn: return "Nenhum dado retornado"
             case .invalidURL: return "URL solicitada é inválida"
+            case .httpError(let statusCode): return "Error: \(statusCode)"
             }
         }
     }
@@ -30,15 +32,26 @@ final class ListContactService: ListContactServiceProtocol {
                 completion(.failure(error))
                 return
             }
-            do {
-                guard let data else {
-                    completion(.failure(BusinessError.emptyReturn))
-                    return
-                }
-                completion(.success(try JSONDecoder().decode([Contact].self, from: data)))
-            } catch {
-                completion(.failure(error))
+            guard let response = response as? HTTPURLResponse else {
+                completion(.failure(BusinessError.emptyReturn))
+                return
             }
+            switch response.statusCode {
+            case 200...299:
+                do {
+                    guard let data else {
+                        completion(.failure(BusinessError.emptyReturn))
+                        return
+                    }
+                    completion(.success(try JSONDecoder().decode([Contact].self, from: data)))
+                } catch {
+                    completion(.failure(error))
+                }
+            default:
+                completion(.failure(BusinessError.httpError(statusCode: response.statusCode)))
+            }
+            
+            
         }
         task.resume()
         return task

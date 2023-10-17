@@ -8,6 +8,7 @@ protocol ListContactsViewModelDelegate: AnyObject {
 final class ListContactsViewModel {
     private let service: ListContactServiceProtocol
     private let legacyIds = [10, 11, 12, 13]
+    private var dataTask: URLSessionDataTask?
     
     weak var delegate: ListContactsViewModelDelegate?
     var viewData = ListContactViewData()
@@ -21,7 +22,7 @@ final class ListContactsViewModel {
     }
     
     func loadContacts() {
-        service.fetchContacts { [weak self] result in
+        dataTask = service.fetchContacts { [weak self] result in
             switch result {
             case .success(let contacts):
                 self?.handleContacts(contacts)
@@ -29,6 +30,10 @@ final class ListContactsViewModel {
                 self?.delegate?.didReceivedError(error)
             }
         }
+    }
+    
+    func cancelAsyncTasks() {
+        dataTask?.cancel()
     }
     
     private func handleContacts(_ contacts: [Contact]) {

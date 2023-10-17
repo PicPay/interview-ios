@@ -32,6 +32,11 @@ final class ListContactsViewController: UIViewController {
         self.title = "Lista de contatos"
         viewModel.loadContacts()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        viewModel.cancelAsyncTasks()
+    }
 }
 
 // MARK: - ListContactViewDelegate conforms
