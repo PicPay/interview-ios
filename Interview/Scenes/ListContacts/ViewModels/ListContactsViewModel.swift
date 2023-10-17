@@ -40,19 +40,22 @@ final class ListContactsViewModel {
     
     private func handleContacts(_ data: Data) {
         do {
-            let contacts = try JSONDecoder().decode([Contact].self, from: data)
-            viewData.contacts = contacts.map {
-                ListContactViewData.Contact(
-                    id: $0.id,
-                    imageURL: $0.photoURL,
-                    name: $0.name
-                )
-            }
-            DispatchQueue.main.async {
-                self.delegate?.contactDidLoaded()
-            }
+            castModelToViewData(try JSONDecoder().decode([Contact].self, from: data))
         } catch {
             delegate?.didReceivedError(error)
+        }
+    }
+    
+    private func castModelToViewData(_ contacts: [Contact]) {
+        viewData.contacts = contacts.map {
+            ListContactViewData.Contact(
+                id: $0.id,
+                imageURL: $0.photoURL,
+                name: $0.name
+            )
+        }
+        DispatchQueue.main.async {
+            self.delegate?.contactDidLoaded()
         }
     }
 }
