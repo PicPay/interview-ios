@@ -50,8 +50,6 @@ final class ListContactService: ListContactServiceProtocol {
             default:
                 completion(.failure(BusinessError.httpError(statusCode: response.statusCode)))
             }
-            
-            
         }
         task.resume()
         return task
