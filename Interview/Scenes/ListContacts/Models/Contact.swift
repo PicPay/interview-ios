@@ -6,7 +6,7 @@ import Foundation
   {
     "id": 1,
     "name": "Shakira",
-    "photoURL": "https://api.adorable.io/avatars/285/a1.png"
+    "photoURL": "https://picsum.photos/id/237/200/"
   }
 ]
 */
