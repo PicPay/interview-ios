@@ -1,6 +1,6 @@
 import Foundation
 
-private let apiURL = "https://run.mocky.io/v3/b5542994-159c-4d66-aa37-9cc250a8c229"
+private let apiURL = "https://669ff1b9b132e2c136ffa741.mockapi.io/picpay/ios/interview/contacts"
 
 class ListContactService {
     func fetchContacts(completion: @escaping ([Contact]?, Error?) -> Void) {
