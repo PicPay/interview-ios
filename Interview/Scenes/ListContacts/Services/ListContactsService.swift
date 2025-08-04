@@ -1,29 +1,30 @@
 import Foundation
 
-private let apiURL = "https://669ff1b9b132e2c136ffa741.mockapi.io/picpay/ios/interview/contacts"
 
 class ListContactService {
-    func fetchContacts(completion: @escaping ([Contact]?, Error?) -> Void) {
-        guard let api = URL(string: apiURL) else {
-            return
+    
+    static let shared = ListContactService()
+    private let session: URLSessionProtocol
+    
+    private init() {
+        self.session = URLSession.shared
+    }
+    init(session: URLSessionProtocol) {
+        self.session = session
+    }
+    
+    func fetchContacts() async throws -> [Contact] {
+        guard let api = URL(string: ContactStrings.contactApiURL) else {
+            throw ContactErrors.invalidURL
         }
         
-        let session = URLSession.shared
-        let task = session.dataTask(with: api) { (data, response, error) in
-            guard let jsonData = data else {
-                return
-            }
-            
-            do {
-                let decoder = JSONDecoder()
-                let decoded = try decoder.decode([Contact].self, from: jsonData)
-                
-                completion(decoded, nil)
-            } catch let error {
-                completion(nil, error)
-            }
+        let (data, response) = try await session.data(for: URLRequest(url: api))
+        
+        guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
+            throw ContactErrors.invalidRequest
         }
         
-        task.resume()
+        return try JSONDecoder().decode([Contact].self, from: data)
     }
 }
+

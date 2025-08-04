@@ -1,26 +1,39 @@
 import Foundation
 
+enum ViewState {
+    case loading
+    case ready
+    case error(ContactErrors)
+}
+
+struct UserIdsLegacy {
+    private static let legacyIds: [Int] = [10, 11, 12, 13]
+    
+    static func isLegacy(id: Int) -> Bool {
+        return legacyIds.contains(id)
+    }
+}
+
 class ListContactsViewModel {
-    private let service = ListContactService()
-    
-    private var completion: (([Contact]?, Error?) -> Void)?
-    
-    init() { }
-    
-    func loadContacts(_ completion: @escaping ([Contact]?, Error?) -> Void) {
-        self.completion = completion
-        service.fetchContacts { contacts, err in
-            self.handle(contacts, err)
+    var onViewStateChange: ((ViewState) -> Void)?
+        private(set) var contactList: [Contact] = []
+        private var viewState: ViewState = .ready {
+        didSet {
+            onViewStateChange?(viewState)
         }
     }
     
-    private func handle(_ contacts: [Contact]?, _ error: Error?) {
-        if let e = error {
-            completion?(nil, e)
-        }
-        
-        if let contacts = contacts {
-            completion?(contacts, nil)
+    func loadContacts() async {
+        viewState = .loading
+        do {
+            self.contactList = try await ListContactService.shared.fetchContacts()
+            self.viewState = .ready
+        }catch {
+            if let contactError = error as? ContactErrors {
+                viewState = .error(contactError)
+            } else {
+                viewState = .error(.unknow)
+            }
         }
     }
 }
